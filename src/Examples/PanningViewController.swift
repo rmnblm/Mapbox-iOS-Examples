@@ -15,6 +15,19 @@ class PanningViewController: UIViewController, MGLMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        loadData()
     }
     
+    private func loadData() {
+        let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
+        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcd", url: geoJSONURL)
+        mapView.style().add(geoJSONSource)
+        
+        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "mcd-layer", sourceIdentifier: "mcd")!
+        styleLayer.circleColor = UIColor.orange
+        styleLayer.circleRadius = 5 as MGLStyleAttributeValue!
+        mapView.style().add(styleLayer)
+    }
 }
+
