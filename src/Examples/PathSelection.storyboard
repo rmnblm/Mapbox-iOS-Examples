@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tGv-8T-mKZ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="F9O-pA-xsH">
+            <objects>
+                <viewController id="tGv-8T-mKZ" customClass="PathSelectionViewController" customModule="Traildevils_Mapbox_PoC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBD-HJ-onQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qEA-aQ-ANF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oNA-d7-MTF" customClass="MGLMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="tGv-8T-mKZ" id="irh-RC-1v3"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="oNA-d7-MTF" id="ZyW-OA-3y9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKX-aq-Dw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166" y="126"/>
+        </scene>
+    </scenes>
+</document>
