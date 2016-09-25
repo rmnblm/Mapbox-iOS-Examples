@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="F9O-pA-xsH">
             <objects>
-                <viewController id="tGv-8T-mKZ" customClass="PathSelectionViewController" customModule="Traildevils_Mapbox_PoC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tGv-8T-mKZ" customClass="PathSelectionViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fBD-HJ-onQ"/>
                         <viewControllerLayoutGuide type="bottom" id="qEA-aQ-ANF"/>

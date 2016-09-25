@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="H3c-cI-PEf">
             <objects>
-                <viewController id="jbl-Wl-ebw" customClass="FilteringViewController" customModule="Traildevils_Mapbox_PoC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jbl-Wl-ebw" customClass="FilteringViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oF3-wE-JCT"/>
                         <viewControllerLayoutGuide type="bottom" id="MDJ-5b-Qha"/>

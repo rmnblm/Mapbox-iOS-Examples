@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="097-H8-3wz">
             <objects>
-                <viewController id="fjk-hQ-ks4" customClass="SemanticZoomingViewController" customModule="Traildevils_Mapbox_PoC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fjk-hQ-ks4" customClass="SemanticZoomingViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zyC-Eh-GSh"/>
                         <viewControllerLayoutGuide type="bottom" id="406-2e-oqE"/>

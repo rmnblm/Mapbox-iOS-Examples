@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="R81-Zt-r5b">
             <objects>
-                <viewController id="286-rC-M2Z" customClass="PanningViewController" customModule="Traildevils_Mapbox_PoC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="286-rC-M2Z" customClass="PanningViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vq0-EU-nvm"/>
                         <viewControllerLayoutGuide type="bottom" id="5hK-6y-GbI"/>
