@@ -31,6 +31,9 @@
 		30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */; };
 		30E48FA71D97E79100F6CCB7 /* GeoJSONParser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FA51D97E79100F6CCB7 /* GeoJSONParser.storyboard */; };
 		30E48FA81D97E79100F6CCB7 /* GeoJSONParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FA61D97E79100F6CCB7 /* GeoJSONParserViewController.swift */; };
+		30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */; };
+		30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FB11D98123900F6CCB7 /* Polygons.storyboard */; };
+		30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */; };
 		5021B45661A977F51CF174FF /* Pods_Mapbox_iOS_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackAnnotationView.swift; path = Examples/MarkerSelectFeedbackAnnotationView.swift; sourceTree = "<group>"; };
 		30E48FA51D97E79100F6CCB7 /* GeoJSONParser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GeoJSONParser.storyboard; path = Examples/GeoJSONParser.storyboard; sourceTree = "<group>"; };
 		30E48FA61D97E79100F6CCB7 /* GeoJSONParserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeoJSONParserViewController.swift; path = Examples/GeoJSONParserViewController.swift; sourceTree = "<group>"; };
+		30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = amsterdam.geojson; path = Resources/amsterdam.geojson; sourceTree = "<group>"; };
+		30E48FB11D98123900F6CCB7 /* Polygons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Polygons.storyboard; path = Examples/Polygons.storyboard; sourceTree = "<group>"; };
+		30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PolygonsViewController.swift; path = Examples/PolygonsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		30E48F6A1D97C06600F6CCB7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				30E48FB01D98117700F6CCB7 /* Polygons */,
 				30E48FA41D97E71200F6CCB7 /* GeoJSONParser */,
 				30E48F731D97C27300F6CCB7 /* Clustering */,
 				30E48F741D97C27C00F6CCB7 /* Filtering */,
@@ -132,6 +139,7 @@
 		30E48F6C1D97C07200F6CCB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */,
 				30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */,
 			);
 			name = Resources;
@@ -199,6 +207,15 @@
 				30E48FA61D97E79100F6CCB7 /* GeoJSONParserViewController.swift */,
 			);
 			name = GeoJSONParser;
+			sourceTree = "<group>";
+		};
+		30E48FB01D98117700F6CCB7 /* Polygons */ = {
+			isa = PBXGroup;
+			children = (
+				30E48FB11D98123900F6CCB7 /* Polygons.storyboard */,
+				30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */,
+			);
+			name = Polygons;
 			sourceTree = "<group>";
 		};
 		69E4F73BCB40B5C766357779 /* Frameworks */ = {
@@ -292,6 +309,8 @@
 				30E48F841D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard in Resources */,
 				30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */,
 				30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */,
+				30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */,
+				30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */,
 				30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +378,7 @@
 				30E48FA81D97E79100F6CCB7 /* GeoJSONParserViewController.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
 				30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */,
+				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
 				30E48F8A1D97C2EE00F6CCB7 /* PanningViewController.swift in Sources */,
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,

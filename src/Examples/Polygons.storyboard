@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DN2-eN-x8F">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="rQI-lP-Gmf">
+            <objects>
+                <viewController id="DN2-eN-x8F" customClass="PolygonsViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w4p-rO-1Nf"/>
+                        <viewControllerLayoutGuide type="bottom" id="YhI-sK-P2I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6gY-OF-so9" customClass="MGLMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="latitude">
+                                <real key="value" value="52.370232000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="longitude">
+                                <real key="value" value="4.8936279999999996"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                <real key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="DN2-eN-x8F" id="mJI-Fa-PUe"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="6gY-OF-so9" id="ii9-Y6-eMi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRF-J3-5Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="-37"/>
+        </scene>
+    </scenes>
+</document>

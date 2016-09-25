@@ -29,6 +29,11 @@ struct ExampleDataSource {
             classPrefix: "GeoJSONParser"
         ),
         Example(
+            title: "Polygons",
+            detail: "Displaying and styling city areas of Amsterdam",
+            classPrefix: "Polygons"
+        ),
+        Example(
             title: "Clustering",
             detail: "Consolidate data that are nearby each other on the map in an aggregate form.",
             classPrefix: "Clustering"
