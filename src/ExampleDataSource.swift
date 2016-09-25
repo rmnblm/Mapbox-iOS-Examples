@@ -54,7 +54,7 @@ struct ExampleDataSource {
             classPrefix: "Panning"
         ),
         Example(
-            title: "Path Selection",
+            title: "Path Selection (not supported)",
             detail: "Styled path with direct user feedback on touch.",
             classPrefix: "PathSelection"
         ),
