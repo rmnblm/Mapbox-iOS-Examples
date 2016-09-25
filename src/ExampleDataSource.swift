@@ -25,7 +25,7 @@ struct ExampleDataSource {
     let examples = [
         Example(
             title: "GeoJSON Parser",
-            detail: "Parsing a GeoJSON manually and add points asynchronously.",
+            detail: "Parsing a GeoJSON manually and dropping pins asynchronously.",
             classPrefix: "GeoJSONParser"
         ),
         Example(
