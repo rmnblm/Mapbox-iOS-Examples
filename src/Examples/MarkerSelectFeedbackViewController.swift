@@ -42,8 +42,7 @@ class MarkerSelectFeedbackViewController: UIViewController, MGLMapViewDelegate {
             annotationView = MarkerSelectFeedbackAnnotationView(reuseIdentifier: reuseIdentifier)
             annotationView!.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40)
             
-            let hue = CGFloat(annotation.coordinate.longitude) / 100
-            annotationView!.backgroundColor = UIColor(hue: hue, saturation: 0.5, brightness: 1, alpha: 1)
+            annotationView!.backgroundColor = UIColor.orange
         }
         
         return annotationView
