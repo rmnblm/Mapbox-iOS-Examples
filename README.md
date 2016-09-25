@@ -1,5 +1,5 @@
 # mapbox-ios-examples
-Mapbox examples using Swift
+Mapbox examples using [Swift 3](https://swift.org/) and [Mapbox iOS SDK](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/ios).
 
 # Prerequisites
 
