@@ -1,6 +1,6 @@
 //
 //  ClusteringViewController.swift
-//  Traildevils-POC
+//  Mapbox-iOS-Examples
 //
 //  Created by Roman Blum on 21.09.16.
 //  Copyright © 2016 rmnblm. All rights reserved.
