@@ -34,6 +34,7 @@
 		30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */; };
 		30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FB11D98123900F6CCB7 /* Polygons.storyboard */; };
 		30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */; };
+		30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */; };
 		5021B45661A977F51CF174FF /* Pods_Mapbox_iOS_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = amsterdam.geojson; path = Resources/amsterdam.geojson; sourceTree = "<group>"; };
 		30E48FB11D98123900F6CCB7 /* Polygons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Polygons.storyboard; path = Examples/Polygons.storyboard; sourceTree = "<group>"; };
 		30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PolygonsViewController.swift; path = Examples/PolygonsViewController.swift; sourceTree = "<group>"; };
+		30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+alert.swift"; path = "Extensions/UIViewController+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				30BAE3DB1D97BBEB00819457 /* Main.storyboard */,
 				30BAE3E01D97BBEB00819457 /* LaunchScreen.storyboard */,
 				30E48F6A1D97C06600F6CCB7 /* Examples */,
+				30E48FB71D98266C00F6CCB7 /* Extensions */,
 				30E48F6C1D97C07200F6CCB7 /* Resources */,
 			);
 			name = Source;
@@ -216,6 +219,14 @@
 				30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */,
 			);
 			name = Polygons;
+			sourceTree = "<group>";
+		};
+		30E48FB71D98266C00F6CCB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		69E4F73BCB40B5C766357779 /* Frameworks */ = {
@@ -373,6 +384,7 @@
 				30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */,
 				30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */,
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
+				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
 				30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */,
 				30E48FA81D97E79100F6CCB7 /* AsyncPinDroppingViewController.swift in Sources */,
