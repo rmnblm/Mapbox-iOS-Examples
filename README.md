@@ -25,23 +25,14 @@ $ git clone https://github.com/rmnblm/mapbox-ios-examples
 $ cd mapbox-ios-examples
 ```
 
-Install all necessary packages (pods).
+Install all necessary packages (pods)
 
 ```
 $ pod install
 ```
 
-Rename the `Keys.example.plist` file to `Keys.plist`, open the file and set your private Mapbox Access Token.
+**Note**: To use any of Mapbox’s tools, APIs, or SDKs, you’ll need a Mapbox **access token**. Mapbox uses access tokens to associate requests to API resources with your account. You can find all your access tokens, create new ones, or delete existing ones on your [API Access Tokens page](https://www.mapbox.com/studio/account/tokens/). If you don't have a Mapbox access token, [sign up](https://www.mapbox.com/studio/signup/) on Mapbox.
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>MAPBOX_ACCESS_TOKEN</key>
-	<string>YOUR API KEY HERE</string>
-</dict>
-</plist>
-```
+Rename the `Keys.example.plist` file to `Keys.plist`, open the file and replace **YOUR API KEY HERE** with your private Mapbox access token. 
 
 Open the project by double-clicking the `*.xcworkspace` file (not the `*.xcodeproj` file!).
