@@ -22,4 +22,6 @@ Install all necessary packages (pods).
 $ pod install
 ```
 
+Rename the `Keys.example.plist` file to `Keys.plist` and set your Mapbox Access inside the file.
+
 Open the project by double-clicking the `*.xcworkspace` file (not the `*.xcodeproj` file!).
