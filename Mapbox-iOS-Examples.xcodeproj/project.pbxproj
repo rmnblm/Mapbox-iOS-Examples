@@ -26,6 +26,7 @@
 		30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */; };
 		30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */; };
 		30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */; };
+		30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */; };
 		5021B45661A977F51CF174FF /* Pods_Mapbox_iOS_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionViewController.swift; path = Examples/PathSelectionViewController.swift; sourceTree = "<group>"; };
 		30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SemanticZooming.storyboard; path = Examples/SemanticZooming.storyboard; sourceTree = "<group>"; };
 		30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemanticZoomingViewController.swift; path = Examples/SemanticZoomingViewController.swift; sourceTree = "<group>"; };
+		30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcdonalds.geojson; path = Resources/mcdonalds.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		30E48F6C1D97C07200F6CCB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				30E48F7F1D97C2E100F6CCB7 /* Filtering.storyboard in Resources */,
 				30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */,
 				30E48F841D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard in Resources */,
+				30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */,
 				30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */,
 				30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */,
 			);
