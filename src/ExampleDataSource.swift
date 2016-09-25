@@ -45,17 +45,17 @@ struct ExampleDataSource {
         ),
         Example(
             title: "Marker Select Feedback",
-            detail: "Direct user feedback when touching a marker/annotation.",
+            detail: "Styled annotation with direct user feedback on touch.",
             classPrefix: "MarkerSelectFeedback"
         ),
         Example(
             title: "Panning",
-            detail: "Try out the performance of two-finger panning on the map.",
+            detail: "Check the panning performance with a huge amount of data.",
             classPrefix: "Panning"
         ),
         Example(
             title: "Path Selection",
-            detail: "Direct user feedback when touching a path.",
+            detail: "Styled path with direct user feedback on touch.",
             classPrefix: "PathSelection"
         ),
         Example(
