@@ -29,6 +29,8 @@
 		30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */; };
 		30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F9C1D97CD7B00F6CCB7 /* Keys.plist */; };
 		30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */; };
+		30E48FA71D97E79100F6CCB7 /* AsyncPinDropping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FA51D97E79100F6CCB7 /* AsyncPinDropping.storyboard */; };
+		30E48FA81D97E79100F6CCB7 /* AsyncPinDropping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FA61D97E79100F6CCB7 /* AsyncPinDropping.swift */; };
 		5021B45661A977F51CF174FF /* Pods_Mapbox_iOS_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcdonalds.geojson; path = Resources/mcdonalds.geojson; sourceTree = "<group>"; };
 		30E48F9C1D97CD7B00F6CCB7 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackAnnotationView.swift; path = Examples/MarkerSelectFeedbackAnnotationView.swift; sourceTree = "<group>"; };
+		30E48FA51D97E79100F6CCB7 /* AsyncPinDropping.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AsyncPinDropping.storyboard; path = Examples/AsyncPinDropping.storyboard; sourceTree = "<group>"; };
+		30E48FA61D97E79100F6CCB7 /* AsyncPinDropping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncPinDropping.swift; path = Examples/AsyncPinDropping.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 		30E48F6A1D97C06600F6CCB7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */,
 				30E48F731D97C27300F6CCB7 /* Clustering */,
 				30E48F741D97C27C00F6CCB7 /* Filtering */,
 				30E48F751D97C28900F6CCB7 /* MarkerSelectFeedback */,
@@ -185,6 +190,15 @@
 				30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */,
 			);
 			name = SemanticZooming;
+			sourceTree = "<group>";
+		};
+		30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */ = {
+			isa = PBXGroup;
+			children = (
+				30E48FA51D97E79100F6CCB7 /* AsyncPinDropping.storyboard */,
+				30E48FA61D97E79100F6CCB7 /* AsyncPinDropping.swift */,
+			);
+			name = AsyncPinDropping;
 			sourceTree = "<group>";
 		};
 		69E4F73BCB40B5C766357779 /* Frameworks */ = {
@@ -269,6 +283,7 @@
 			files = (
 				30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */,
 				30E48F891D97C2EE00F6CCB7 /* Panning.storyboard in Resources */,
+				30E48FA71D97E79100F6CCB7 /* AsyncPinDropping.storyboard in Resources */,
 				30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */,
 				30E48F7B1D97C2DA00F6CCB7 /* Clustering.storyboard in Resources */,
 				30E48F8D1D97C2F400F6CCB7 /* PathSelection.storyboard in Resources */,
@@ -341,6 +356,7 @@
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
 				30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */,
+				30E48FA81D97E79100F6CCB7 /* AsyncPinDropping.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
 				30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */,
 				30E48F8A1D97C2EE00F6CCB7 /* PanningViewController.swift in Sources */,

@@ -24,6 +24,11 @@ struct Example {
 struct ExampleDataSource {
     let examples = [
         Example(
+            title: "Async Pin Dropping",
+            detail: "Adding massive data asynchronously.",
+            classPrefix: "AsyncPinDropping"
+        ),
+        Example(
             title: "Clustering",
             detail: "Consolidate data that are nearby each other on the map in an aggregate form.",
             classPrefix: "Clustering"
