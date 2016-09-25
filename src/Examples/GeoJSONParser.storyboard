@@ -9,7 +9,7 @@
         <!--Delegate-->
         <scene sceneID="rQI-lP-Gmf">
             <objects>
-                <viewController id="DN2-eN-x8F" customClass="AsyncPinDroppingViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DN2-eN-x8F" customClass="GeoJSONParserViewController" customModule="Mapbox_iOS_Examples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w4p-rO-1Nf"/>
                         <viewControllerLayoutGuide type="bottom" id="YhI-sK-P2I"/>

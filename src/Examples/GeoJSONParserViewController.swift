@@ -10,7 +10,7 @@ import UIKit
 import Mapbox
 import SwiftyJSON
 
-class AsyncPinDroppingViewController: UIViewController, MGLMapViewDelegate {
+class GeoJSONParserViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
