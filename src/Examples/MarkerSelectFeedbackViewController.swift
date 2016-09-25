@@ -13,8 +13,8 @@ class MarkerSelectFeedbackViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         let point = MGLPointAnnotation()
         point.coordinate = CLLocationCoordinate2D(latitude: 47.223272, longitude: 8.81734)
