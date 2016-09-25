@@ -15,6 +15,8 @@ class AsyncPinDroppingViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet var mapView: MGLMapView!
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         loadData()
     }
     
