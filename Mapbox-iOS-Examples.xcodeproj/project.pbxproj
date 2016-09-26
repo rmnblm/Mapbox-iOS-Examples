@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3022916D1D99388A0036D338 /* PathSelectionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */; };
 		308FEC2D1D9858E200499BED /* portland.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 308FEC2C1D9858E200499BED /* portland.geojson */; };
 		308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC351D98630B00499BED /* FilteringViewController.swift */; };
 		308FEC3B1D9863D600499BED /* FilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC3A1D9863D600499BED /* FilterViewCell.swift */; };
@@ -45,6 +46,7 @@
 		0101E464E567E9485184AA18 /* Pods-Mapbox-iOS-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.debug.xcconfig"; sourceTree = "<group>"; };
 		081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapbox_iOS_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionAnnotationView.swift; path = Examples/PathSelectionAnnotationView.swift; sourceTree = "<group>"; };
 		308FEC2C1D9858E200499BED /* portland.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = portland.geojson; path = Resources/portland.geojson; sourceTree = "<group>"; };
 		308FEC351D98630B00499BED /* FilteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewController.swift; path = Examples/FilteringViewController.swift; sourceTree = "<group>"; };
 		308FEC3A1D9863D600499BED /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */,
 				30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */,
+				3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */,
 			);
 			name = PathSelection;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
 				308FEC3B1D9863D600499BED /* FilterViewCell.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,
+				3022916D1D99388A0036D338 /* PathSelectionAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
