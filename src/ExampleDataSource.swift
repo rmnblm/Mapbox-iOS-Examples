@@ -54,8 +54,8 @@ struct ExampleDataSource {
             classPrefix: "Panning"
         ),
         Example(
-            title: "Path Selection (not supported)",
-            detail: "Styled path with direct user feedback on touch.",
+            title: "Path Selection (Workaround)",
+            detail: "Marker feedback on every point of the polyline, because of not yet supported path selection feature (Issue #2082).",
             classPrefix: "PathSelection"
         ),
         Example(

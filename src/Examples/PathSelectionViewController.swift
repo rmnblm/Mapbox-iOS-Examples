@@ -35,7 +35,10 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
                         for location in feature["geometry"]["coordinates"].arrayValue {
                             let coordinate = CLLocationCoordinate2DMake(location[1].doubleValue, location[0].doubleValue)
                             coordinates.append(coordinate)
+                            
+                            
                         }
+                        
                         
                         let line = MGLPolyline(coordinates: &coordinates, count: UInt(coordinates.count))
                         line.title = feature["properties"]["name"].stringValue
@@ -44,6 +47,14 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
                             // Unowned reference to self to prevent retain cycle
                             [unowned self] in
                             self.mapView.addAnnotation(line)
+                            
+                            for coordinate in coordinates {
+                                let point = MGLPointAnnotation()
+                                point.coordinate = coordinate
+                                point.title = "Marker selected"
+                                point.subtitle = String(coordinate.latitude) + "/" + String(coordinate.longitude)
+                                self.mapView.addAnnotation(point)
+                            }
                         }
                     }
                 }
@@ -53,5 +64,37 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
                 print("GeoJSON parsing failed")
             }
         }
+    }
+    
+    // MARK: - MGLMapViewDelegate methods
+    
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        
+        guard annotation is MGLPointAnnotation else {
+            return nil
+        }
+        
+        let reuseIdentifier = String(annotation.coordinate.latitude) + "/" + String(annotation.coordinate.longitude)
+        
+        // For better performance, always try to reuse existing annotations
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        // If there’s no reusable annotation view available, initialize a new one
+        if annotationView == nil {
+            annotationView = MarkerSelectFeedbackAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView!.frame = CGRect.init(x: 0, y: 0, width: 8, height: 8)
+            
+            annotationView!.backgroundColor = UIColor.blue
+        }
+        
+        return annotationView
+    }
+    
+    public func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        return true
+    }
+    
+    public func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
+        return 5
     }
 }
