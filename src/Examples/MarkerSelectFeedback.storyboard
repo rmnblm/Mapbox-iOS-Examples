@@ -28,6 +28,10 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
                                 <real key="value" value="14"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsZooming" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsTilting" value="NO"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="delegate" destination="i8B-Ya-hIY" id="zE2-qQ-hZ6"/>
