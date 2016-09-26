@@ -25,7 +25,7 @@ $ git clone https://github.com/rmnblm/mapbox-ios-examples
 $ cd mapbox-ios-examples
 ```
 
-Install all necessary packages (pods)
+Install all necessary pods (again, please make sure that your CocoaPods version is >=1.1.0, otherwise problems may occur!)
 
 ```
 $ pod install
