@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		308FEC2D1D9858E200499BED /* portland.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 308FEC2C1D9858E200499BED /* portland.geojson */; };
+		308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC351D98630B00499BED /* FilteringViewController.swift */; };
+		308FEC3B1D9863D600499BED /* FilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC3A1D9863D600499BED /* FilterViewCell.swift */; };
 		30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BAE3D71D97BBEB00819457 /* AppDelegate.swift */; };
 		30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DB1D97BBEB00819457 /* Main.storyboard */; };
 		30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DE1D97BBEB00819457 /* Assets.xcassets */; };
@@ -18,7 +20,6 @@
 		30E48F7B1D97C2DA00F6CCB7 /* Clustering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F791D97C2DA00F6CCB7 /* Clustering.storyboard */; };
 		30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F7A1D97C2DA00F6CCB7 /* ClusteringViewController.swift */; };
 		30E48F7F1D97C2E100F6CCB7 /* Filtering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F7D1D97C2E100F6CCB7 /* Filtering.storyboard */; };
-		30E48F801D97C2E100F6CCB7 /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F7E1D97C2E100F6CCB7 /* FilteringViewController.swift */; };
 		30E48F841D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F811D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard */; };
 		30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */; };
 		30E48F891D97C2EE00F6CCB7 /* Panning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F871D97C2EE00F6CCB7 /* Panning.storyboard */; };
@@ -45,6 +46,8 @@
 		081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapbox_iOS_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		308FEC2C1D9858E200499BED /* portland.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = portland.geojson; path = Resources/portland.geojson; sourceTree = "<group>"; };
+		308FEC351D98630B00499BED /* FilteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewController.swift; path = Examples/FilteringViewController.swift; sourceTree = "<group>"; };
+		308FEC3A1D9863D600499BED /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
 		30BAE3D41D97BBEB00819457 /* Mapbox-iOS-Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mapbox-iOS-Examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BAE3D71D97BBEB00819457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30BAE3DC1D97BBEB00819457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		30E48F791D97C2DA00F6CCB7 /* Clustering.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Clustering.storyboard; path = Examples/Clustering.storyboard; sourceTree = "<group>"; };
 		30E48F7A1D97C2DA00F6CCB7 /* ClusteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusteringViewController.swift; path = Examples/ClusteringViewController.swift; sourceTree = "<group>"; };
 		30E48F7D1D97C2E100F6CCB7 /* Filtering.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Filtering.storyboard; path = Examples/Filtering.storyboard; sourceTree = "<group>"; };
-		30E48F7E1D97C2E100F6CCB7 /* FilteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewController.swift; path = Examples/FilteringViewController.swift; sourceTree = "<group>"; };
 		30E48F811D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MarkerSelectFeedback.storyboard; path = Examples/MarkerSelectFeedback.storyboard; sourceTree = "<group>"; };
 		30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackViewController.swift; path = Examples/MarkerSelectFeedbackViewController.swift; sourceTree = "<group>"; };
 		30E48F871D97C2EE00F6CCB7 /* Panning.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Panning.storyboard; path = Examples/Panning.storyboard; sourceTree = "<group>"; };
@@ -167,7 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				30E48F7D1D97C2E100F6CCB7 /* Filtering.storyboard */,
-				30E48F7E1D97C2E100F6CCB7 /* FilteringViewController.swift */,
+				308FEC351D98630B00499BED /* FilteringViewController.swift */,
+				308FEC3A1D9863D600499BED /* FilterViewCell.swift */,
 			);
 			name = Filtering;
 			sourceTree = "<group>";
@@ -259,12 +262,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30BAE3E61D97BBEB00819457 /* Build configuration list for PBXNativeTarget "Mapbox-iOS-Examples" */;
 			buildPhases = (
+				5E057BCFCFAD2B675A6EB6C0 /* [CP] Check Pods Manifest.lock */,
 				EE9DD45A5FBB7AFCA43CFA7A /* [CP] Check Pods Manifest.lock */,
 				30BAE3D01D97BBEB00819457 /* Sources */,
 				30BAE3D11D97BBEB00819457 /* Frameworks */,
 				30BAE3D21D97BBEB00819457 /* Resources */,
 				B569BA0F546D1B6242779382 /* [CP] Embed Pods Frameworks */,
 				14E4786220326890EC20DD4E /* [CP] Copy Pods Resources */,
+				EBD9BE750C7519C48B0E023A /* 📦 Embed Pods Frameworks */,
+				9254CE323EBE7B508A236076 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +358,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5E057BCFCFAD2B675A6EB6C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9254CE323EBE7B508A236076 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B569BA0F546D1B6242779382 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +396,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBD9BE750C7519C48B0E023A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +450,11 @@
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
 				30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */,
 				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
+				308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */,
 				30E48F8A1D97C2EE00F6CCB7 /* PanningViewController.swift in Sources */,
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
+				308FEC3B1D9863D600499BED /* FilterViewCell.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,
-				30E48F801D97C2E100F6CCB7 /* FilteringViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0101E464E567E9485184AA18 /* Pods-Mapbox-iOS-Examples.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LX2LWMTL8R;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
@@ -543,7 +595,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LX2LWMTL8R;
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
