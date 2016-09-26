@@ -9,14 +9,9 @@
 import UIKit
 import Mapbox
 
-struct Filter {
-    let title: String
-    var layer: MGLStyleLayer
-}
-
 class FilteringViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,  MGLMapViewDelegate {
     
-    var filters = [Filter]()
+    private let dataSource = FilterDataSource()
     
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var tableView: UITableView!
@@ -33,34 +28,30 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "sv", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
-        addLayerWithFilter(title: "Cafes", color: UIColor.brown, predicate: NSPredicate(format: "amenity == 'cafe'"))
-        addLayerWithFilter(title: "Banks", color: UIColor.green, predicate: NSPredicate(format: "amenity == 'bank'"))
-        addLayerWithFilter(title: "Toilets", color: UIColor.white, predicate: NSPredicate(format: "amenity == 'toilets'"))
-        addLayerWithFilter(title: "Restaurants", color: UIColor.blue, predicate: NSPredicate(format: "amenity == 'restaurant'"))
+        for filter in dataSource.filters {
+            addLayer(filter: filter)
+        }
         
         tableView.reloadData()
     }
     
-    private func addLayerWithFilter(title: String, color: UIColor, predicate: NSPredicate) {
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "sv-" + title + "-layer", sourceIdentifier: "sv")!
-        styleLayer.predicate = predicate
-        styleLayer.circleColor = color
+    private func addLayer(filter: Filter) {
+        let styleLayer = MGLCircleStyleLayer(layerIdentifier: filter.title, sourceIdentifier: "sv")!
+        styleLayer.predicate = filter.predicate
+        styleLayer.circleColor = filter.color
         mapView.style().add(styleLayer)
-        
-        let filter = Filter(title: title, layer: styleLayer)
-        filters.append(filter)
     }
     
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filters.count
+        return dataSource.filters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? FilterViewCell else {fatalError()}
         
-        let filter = filters[(indexPath as NSIndexPath).row]
+        let filter = dataSource.filters[(indexPath as NSIndexPath).row]
         cell.titleLabel.text  = filter.title
         cell.stateSwitch.addTarget(self, action: #selector(filterStateChanged), for: UIControlEvents.valueChanged)
         cell.stateSwitch.tag = indexPath.row
@@ -69,11 +60,13 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func filterStateChanged(sender: UISwitch) {
-        let filter = filters[sender.tag]
+        let filter = dataSource.filters[sender.tag]
         if (sender.isOn) {
-            mapView.style().add(filter.layer)
+            addLayer(filter: filter)
         } else {
-            mapView.style().remove(filter.layer)
+            if let layer = mapView.style().layer(withIdentifier: filter.title) {
+                mapView.style().remove(layer)
+            }
         }
     }
     
@@ -88,6 +81,10 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! FilterViewCell
+        cell.stateSwitch.setOn(!cell.stateSwitch.isOn, animated: true)
+        filterStateChanged(sender: cell.stateSwitch)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
