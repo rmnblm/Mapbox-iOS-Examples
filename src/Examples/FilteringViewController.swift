@@ -27,13 +27,11 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
         mapView.style().add(geoJSONSource)
         
         for layer in dataSource.layers {
-            addLayer(layer: layer)
+            add(layer: layer)
         }
-        
-        tableView.reloadData()
     }
     
-    private func addLayer(layer: FilteringLayer) {
+    private func add(layer: FilteringLayer) {
         let styleLayer = MGLCircleStyleLayer(layerIdentifier: layer.title, sourceIdentifier: "sv")!
         styleLayer.predicate = layer.predicate
         styleLayer.circleColor = layer.color
@@ -60,7 +58,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     func filterStateChanged(sender: UISwitch) {
         let layer = dataSource.layers[sender.tag]
         if (sender.isOn) {
-            addLayer(layer: layer)
+            add(layer: layer)
         } else {
             if let styleLayer = mapView.style().layer(withIdentifier: layer.title) {
                 mapView.style().remove(styleLayer)
