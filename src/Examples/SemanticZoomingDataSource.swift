@@ -15,8 +15,6 @@ class SemanticZoomingLayer {
     let predicate: NSPredicate
     let visibleAt: Double
     
-    var styleLayer: MGLCircleStyleLayer?
-    
     init(title: String, color: UIColor, predicate: NSPredicate, visibleAt: Double) {
         self.title = title
         self.color = color
@@ -24,17 +22,9 @@ class SemanticZoomingLayer {
         self.visibleAt = visibleAt
     }
     
-    func validate(zoomLevel: Double) {
-        print("\(title) -> zoomLevel: \(zoomLevel) / visibleAt: \(visibleAt) / displayLayer? \(zoomLevel >= visibleAt)")
-        if zoomLevel >= visibleAt {
-            styleLayer?.predicate = predicate
-        } else {
-            // Predicate always returns false to hide layer
-            // Sadly, NSPredicate(value: false) doesn't work with Mapbox
-            styleLayer?.predicate = NSPredicate(format: "test == 'not'")
-        }
-    }
-    
+    // Workaround until issue #6361 is resolved
+    // https://github.com/mapbox/mapbox-gl-native/issues/6361
+    var styleLayer: MGLStyleLayer?
 }
 
 struct SemanticZoomingDataSource {

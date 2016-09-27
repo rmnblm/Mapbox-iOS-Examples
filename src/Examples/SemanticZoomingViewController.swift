@@ -15,9 +15,12 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
+    var mapLoaded = false
+    
     public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        mapLoaded = true
+        
         loadData()
-        addLayers()
         revalidateLayers()
     }
     
@@ -27,28 +30,35 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
         mapView.style().add(geoJSONSource)
     }
     
-    private func addLayer(layer: SemanticZoomingLayer) {
+    public func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        // Check if map is loaded, this won't be necessary in the future when issue #6361 is fixed
+        // https://github.com/mapbox/mapbox-gl-native/issues/6361
+        if mapLoaded {
+            revalidateLayers()
+        }
+    }
+    
+    private func revalidateLayers() {
+        for layer in dataSource.layers {
+            if mapView.zoomLevel >= layer.visibleAt {
+                if layer.styleLayer == nil {
+                    add(layer: layer)
+                }
+            } else {
+                if layer.styleLayer != nil {
+                    mapView.style().remove(layer.styleLayer!)
+                    layer.styleLayer = nil
+                }
+            }
+        }
+    }
+    
+    private func add(layer: SemanticZoomingLayer) {
         let styleLayer = MGLCircleStyleLayer(layerIdentifier: layer.title, sourceIdentifier: "sv")!
         styleLayer.predicate = layer.predicate
         styleLayer.circleColor = layer.color
         mapView.style().add(styleLayer)
         
         layer.styleLayer = styleLayer
-    }
-    
-    public func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
-        revalidateLayers()
-    }
-    
-    private func addLayers() {
-        for layer in dataSource.layers {
-            addLayer(layer: layer)
-        }
-    }
-    
-    private func revalidateLayers() {
-        for layer in dataSource.layers {
-            layer.validate(zoomLevel: mapView.zoomLevel)
-        }
     }
 }
