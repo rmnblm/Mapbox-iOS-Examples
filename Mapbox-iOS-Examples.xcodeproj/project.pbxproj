@@ -16,6 +16,7 @@
 		30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DB1D97BBEB00819457 /* Main.storyboard */; };
 		30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DE1D97BBEB00819457 /* Assets.xcassets */; };
 		30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3E01D97BBEB00819457 /* LaunchScreen.storyboard */; };
+		30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */; };
 		30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */; };
 		30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6E1D97C09400F6CCB7 /* RootViewController.swift */; };
 		30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F711D97C0B400F6CCB7 /* ExampleDataSource.swift */; };
@@ -58,6 +59,7 @@
 		30BAE3DE1D97BBEB00819457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30BAE3E11D97BBEB00819457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30BAE3E31D97BBEB00819457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemanticZoomingDataSource.swift; path = Examples/SemanticZoomingDataSource.swift; sourceTree = "<group>"; };
 		30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
 		30E48F6E1D97C09400F6CCB7 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		30E48F711D97C0B400F6CCB7 /* ExampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */,
 				30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */,
+				30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */,
 			);
 			name = SemanticZooming;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */,
 				30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */,
+				30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */,
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
