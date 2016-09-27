@@ -13,9 +13,7 @@ class MarkerSelectFeedbackViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let point = MGLPointAnnotation()
         point.coordinate = CLLocationCoordinate2D(latitude: 47.223272, longitude: 8.81734)
         point.title = "University of Applied Sciences Rapperswil"

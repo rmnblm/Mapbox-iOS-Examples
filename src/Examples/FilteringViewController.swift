@@ -16,9 +16,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var tableView: UITableView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         loadData()
     }
     

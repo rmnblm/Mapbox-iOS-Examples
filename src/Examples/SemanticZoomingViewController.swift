@@ -13,8 +13,10 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        
+        loadData()
+    }
     }
     
 }
