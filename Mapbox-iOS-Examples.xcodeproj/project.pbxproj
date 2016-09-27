@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3022916D1D99388A0036D338 /* PathSelectionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */; };
 		3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */; };
 		308FEC2D1D9858E200499BED /* portland.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 308FEC2C1D9858E200499BED /* portland.geojson */; };
 		308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC351D98630B00499BED /* FilteringViewController.swift */; };
@@ -20,6 +19,7 @@
 		30E22EB11D9ABD7600F67256 /* Heatmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */; };
 		30E22EB21D9ABD7600F67256 /* HeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */; };
 		30E22EB41D9ABD9B00F67256 /* earthquakes.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */; };
+		30E22EB61D9AC37E00F67256 /* PathSelectionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */; };
 		30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */; };
 		30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6E1D97C09400F6CCB7 /* RootViewController.swift */; };
 		30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F711D97C0B400F6CCB7 /* ExampleDataSource.swift */; };
@@ -51,7 +51,6 @@
 		0101E464E567E9485184AA18 /* Pods-Mapbox-iOS-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.debug.xcconfig"; sourceTree = "<group>"; };
 		081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapbox_iOS_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionAnnotationView.swift; path = Examples/PathSelectionAnnotationView.swift; sourceTree = "<group>"; };
 		3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringDataSource.swift; path = Examples/FilteringDataSource.swift; sourceTree = "<group>"; };
 		308FEC2C1D9858E200499BED /* portland.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = portland.geojson; path = Resources/portland.geojson; sourceTree = "<group>"; };
 		308FEC351D98630B00499BED /* FilteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewController.swift; path = Examples/FilteringViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Heatmap.storyboard; path = Examples/Heatmap.storyboard; sourceTree = "<group>"; };
 		30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeatmapViewController.swift; path = Examples/HeatmapViewController.swift; sourceTree = "<group>"; };
 		30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = earthquakes.geojson; path = Resources/earthquakes.geojson; sourceTree = "<group>"; };
+		30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionAnnotationView.swift; path = Examples/PathSelectionAnnotationView.swift; sourceTree = "<group>"; };
 		30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
 		30E48F6E1D97C09400F6CCB7 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		30E48F711D97C0B400F6CCB7 /* ExampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 			children = (
 				30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */,
 				30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */,
-				3022916C1D99388A0036D338 /* PathSelectionAnnotationView.swift */,
+				30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */,
 			);
 			name = PathSelection;
 			sourceTree = "<group>";
@@ -474,6 +474,7 @@
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
+				30E22EB61D9AC37E00F67256 /* PathSelectionAnnotationView.swift in Sources */,
 				30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */,
 				30E48FA81D97E79100F6CCB7 /* AsyncPinDroppingViewController.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
@@ -486,7 +487,6 @@
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
 				308FEC3B1D9863D600499BED /* FilterViewCell.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,
-				3022916D1D99388A0036D338 /* PathSelectionAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
