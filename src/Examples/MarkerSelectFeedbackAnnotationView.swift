@@ -10,6 +10,9 @@ import UIKit
 import Mapbox
 
 class MarkerSelectFeedbackAnnotationView: MGLAnnotationView {
+    
+    public var selectedChanged: ((Bool) -> Void)?
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -30,5 +33,7 @@ class MarkerSelectFeedbackAnnotationView: MGLAnnotationView {
         animation.duration = 0.1
         layer.borderWidth = selected ? frame.width / 4 : 2
         layer.add(animation, forKey: "borderWidth")
+        
+        selectedChanged?(selected)
     }
 }

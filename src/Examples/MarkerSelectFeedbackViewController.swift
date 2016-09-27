@@ -39,8 +39,18 @@ class MarkerSelectFeedbackViewController: UIViewController, MGLMapViewDelegate {
         if annotationView == nil {
             annotationView = MarkerSelectFeedbackAnnotationView(reuseIdentifier: reuseIdentifier)
             annotationView!.frame = CGRect.init(x: 0, y: 0, width: 40, height: 40)
-            
             annotationView!.backgroundColor = UIColor.orange
+            (annotationView as! MarkerSelectFeedbackAnnotationView).selectedChanged = { selected -> Void in
+                DispatchQueue.main.async {
+                    // Unowned reference to self to prevent retain cycle
+                    [unowned self] in
+                    if selected {
+                        self.showAlert(title: "Annotation selected", message: "")
+                    } else {
+                        self.showAlert(title: "Annotation unselected", message: "")
+                    }
+                }
+            }
         }
         
         return annotationView
