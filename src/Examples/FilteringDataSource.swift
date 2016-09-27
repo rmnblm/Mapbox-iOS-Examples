@@ -8,30 +8,30 @@
 
 import UIKit
 
-struct Filter {
+struct FilteringLayer {
     let title: String
     let color: UIColor
     let predicate: NSPredicate
 }
 
-struct FilterDataSource {
-    let filters = [
-        Filter(
+struct FilteringDataSource {
+    let layers = [
+        FilteringLayer(
             title: "Cafes",
             color: UIColor.brown,
             predicate: NSPredicate(format: "amenity == 'cafe'")
         ),
-        Filter(
+        FilteringLayer(
             title: "Banks",
             color: UIColor.green,
             predicate: NSPredicate(format: "amenity == 'bank'")
         ),
-        Filter(
+        FilteringLayer(
             title: "Toilets",
             color: UIColor.white,
             predicate: NSPredicate(format: "amenity == 'toilets'")
         ),
-        Filter(
+        FilteringLayer(
             title: "Restaurants",
             color: UIColor.blue,
             predicate: NSPredicate(format: "amenity == 'restaurant'")
