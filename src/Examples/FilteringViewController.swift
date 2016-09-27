@@ -16,8 +16,18 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var tableView: UITableView!
     
-    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        loadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Adding dummy annotation as a workaround to use images from resource bundle
+        // See https://github.com/mapbox/mapbox-gl-native/issues/6436#issuecomment-249667206 for more infos
+        for layer in dataSource.layers {
+            if layer.isBundleImage {
+                let point = MGLPointAnnotation()
+                point.title = layer.iconName
+                mapView.addAnnotation(point)
+            }
+        }
     }
     
     private func loadData() {
@@ -32,10 +42,33 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func add(layer: FilteringLayer) {
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: layer.title, sourceIdentifier: "sv")!
+        let styleLayer = MGLSymbolStyleLayer(layerIdentifier: layer.title, sourceIdentifier: "sv")!
         styleLayer.predicate = layer.predicate
-        styleLayer.circleColor = layer.color
+        if (layer.isBundleImage) {
+            styleLayer.iconImage = "com.mapbox.sprites.\(layer.iconName)" as MGLStyleAttributeValue!
+        }
+        else {
+            styleLayer.iconImage = layer.iconName as MGLStyleAttributeValue!
+        }
         mapView.style().add(styleLayer)
+    }
+    
+    // MARK: MGLMapViewDelegate
+    
+    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        loadData()
+    }
+    
+    public func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        let reuseIdentifier = annotation.title!!
+        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier)
+        
+        if annotationImage == nil {
+            let image = UIImage(named: annotation.title!!)!
+            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifier)
+        }
+        
+        return annotationImage
     }
     
     // MARK: UITableViewDataSource
