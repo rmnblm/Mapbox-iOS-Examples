@@ -78,7 +78,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? FilterViewCell else {fatalError()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? FilteringViewCell else {fatalError()}
         
         let layer = dataSource.layers[(indexPath as NSIndexPath).row]
         cell.titleLabel.text  = layer.title
@@ -110,7 +110,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! FilterViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! FilteringViewCell
         cell.stateSwitch.setOn(!cell.stateSwitch.isOn, animated: true)
         filterStateChanged(sender: cell.stateSwitch)
         
