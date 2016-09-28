@@ -27,7 +27,7 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     }
     
     public func mapViewDidFinishRenderingFrame(_ mapView: MGLMapView, fullyRendered: Bool) {
-        // Check if map is loaded, this won't be necessary in the future when issue #6361 is fixed
+        // Check if frame is fully rendered, this won't be necessary in the future when issue #6361 is fixed
         // https://github.com/mapbox/mapbox-gl-native/issues/6361
         if fullyRendered {
             revalidateLayers()
