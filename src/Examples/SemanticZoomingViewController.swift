@@ -15,11 +15,7 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
-    var mapLoaded = false
-    
     public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        mapLoaded = true
-        
         loadData()
         revalidateLayers()
     }
@@ -30,10 +26,10 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
         mapView.style().add(geoJSONSource)
     }
     
-    public func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+    public func mapViewDidFinishRenderingFrame(_ mapView: MGLMapView, fullyRendered: Bool) {
         // Check if map is loaded, this won't be necessary in the future when issue #6361 is fixed
         // https://github.com/mapbox/mapbox-gl-native/issues/6361
-        if mapLoaded {
+        if fullyRendered {
             revalidateLayers()
         }
     }
