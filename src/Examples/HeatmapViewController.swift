@@ -1,5 +1,5 @@
 //
-//  ClusteringViewController.swift
+//  HeatmapViewController.swift
 //  Mapbox-iOS-Examples
 //
 //  Created by Roman Blum on 21.09.16.

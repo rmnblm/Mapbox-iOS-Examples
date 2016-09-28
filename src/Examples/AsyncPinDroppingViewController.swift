@@ -1,5 +1,5 @@
 //
-//  ClusteringViewController.swift
+//  AsyncPinDroppingViewController.swift
 //  Mapbox-iOS-Examples
 //
 //  Created by Roman Blum on 21.09.16.
