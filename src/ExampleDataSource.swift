@@ -67,11 +67,6 @@ struct ExampleDataSource {
             title: "Heatmap",
             detail: "Display a heatmap of earthquakes in America using clustering and predicates.",
             classPrefix: "Heatmap"
-        ),
-        Example(
-            title: "Mapbox Studio",
-            detail: "Accessing data and styles remotely from Mapbox Studio (change Style URL in code first).",
-            classPrefix: "MapboxStudio"
         )
     ]
 }

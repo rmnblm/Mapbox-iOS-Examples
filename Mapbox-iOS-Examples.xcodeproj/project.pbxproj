@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */; };
-		302391A41D9BFFC80057822D /* MapboxStudio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302391A21D9BFFC80057822D /* MapboxStudio.storyboard */; };
-		302391A51D9BFFC80057822D /* MapboxStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302391A31D9BFFC80057822D /* MapboxStudioViewController.swift */; };
 		308FEC2D1D9858E200499BED /* portland.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 308FEC2C1D9858E200499BED /* portland.geojson */; };
 		308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308FEC351D98630B00499BED /* FilteringViewController.swift */; };
 		30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BAE3D71D97BBEB00819457 /* AppDelegate.swift */; };
@@ -20,7 +18,6 @@
 		30E22EB11D9ABD7600F67256 /* Heatmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */; };
 		30E22EB21D9ABD7600F67256 /* HeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */; };
 		30E22EB41D9ABD9B00F67256 /* earthquakes.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */; };
-		30E22EB61D9AC37E00F67256 /* PathSelectionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */; };
 		30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */; };
 		30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */; };
 		30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */; };
@@ -55,8 +52,6 @@
 		081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapbox_iOS_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringDataSource.swift; path = Examples/FilteringDataSource.swift; sourceTree = "<group>"; };
-		302391A21D9BFFC80057822D /* MapboxStudio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MapboxStudio.storyboard; path = Examples/MapboxStudio.storyboard; sourceTree = "<group>"; };
-		302391A31D9BFFC80057822D /* MapboxStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapboxStudioViewController.swift; path = Examples/MapboxStudioViewController.swift; sourceTree = "<group>"; };
 		308FEC2C1D9858E200499BED /* portland.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = portland.geojson; path = Resources/portland.geojson; sourceTree = "<group>"; };
 		308FEC351D98630B00499BED /* FilteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewController.swift; path = Examples/FilteringViewController.swift; sourceTree = "<group>"; };
 		30BAE3D41D97BBEB00819457 /* Mapbox-iOS-Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mapbox-iOS-Examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +64,6 @@
 		30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Heatmap.storyboard; path = Examples/Heatmap.storyboard; sourceTree = "<group>"; };
 		30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeatmapViewController.swift; path = Examples/HeatmapViewController.swift; sourceTree = "<group>"; };
 		30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = earthquakes.geojson; path = Resources/earthquakes.geojson; sourceTree = "<group>"; };
-		30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionAnnotationView.swift; path = Examples/PathSelectionAnnotationView.swift; sourceTree = "<group>"; };
 		30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackCalloutView.swift; path = Examples/MarkerSelectFeedbackCalloutView.swift; sourceTree = "<group>"; };
 		30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewCell.swift; path = Examples/FilteringViewCell.swift; sourceTree = "<group>"; };
 		30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
@@ -110,15 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		302391A11D9BFED70057822D /* MapboxStudio */ = {
-			isa = PBXGroup;
-			children = (
-				302391A21D9BFFC80057822D /* MapboxStudio.storyboard */,
-				302391A31D9BFFC80057822D /* MapboxStudioViewController.swift */,
-			);
-			name = MapboxStudio;
-			sourceTree = "<group>";
-		};
 		30BAE3CB1D97BBEB00819457 = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +154,6 @@
 		30E48F6A1D97C06600F6CCB7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				302391A11D9BFED70057822D /* MapboxStudio */,
 				30E22EAE1D9ABCDE00F67256 /* Heatmap */,
 				30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */,
 				30E48FB01D98117700F6CCB7 /* Polygons */,
@@ -240,7 +224,6 @@
 			children = (
 				30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */,
 				30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */,
-				30E22EB51D9AC37E00F67256 /* PathSelectionAnnotationView.swift */,
 			);
 			name = PathSelection;
 			sourceTree = "<group>";
@@ -369,7 +352,6 @@
 				30E48FA71D97E79100F6CCB7 /* AsyncPinDropping.storyboard in Resources */,
 				30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */,
 				30E48FBB1D983F0D00F6CCB7 /* siliconvalley.geojson in Resources */,
-				302391A41D9BFFC80057822D /* MapboxStudio.storyboard in Resources */,
 				30E48F7B1D97C2DA00F6CCB7 /* Clustering.storyboard in Resources */,
 				30E48F8D1D97C2F400F6CCB7 /* PathSelection.storyboard in Resources */,
 				308FEC2D1D9858E200499BED /* portland.geojson in Resources */,
@@ -492,10 +474,8 @@
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */,
 				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
-				302391A51D9BFFC80057822D /* MapboxStudioViewController.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
 				30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */,
-				30E22EB61D9AC37E00F67256 /* PathSelectionAnnotationView.swift in Sources */,
 				30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */,
 				30E48FA81D97E79100F6CCB7 /* AsyncPinDroppingViewController.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
