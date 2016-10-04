@@ -62,6 +62,11 @@ struct ExampleDataSource {
             title: "Semantic Zooming",
             detail: "Details on demand that lets the user see different amounts of detail in a view by zooming in and out.",
             classPrefix: "SemanticZooming"
+        ),
+        Example(
+            title: "Offline",
+            detail: "Download an offline pack and track its progress.",
+            classPrefix: "Offline"
         )
     ]
 }
