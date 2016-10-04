@@ -62,11 +62,6 @@ struct ExampleDataSource {
             title: "Semantic Zooming",
             detail: "Details on demand that lets the user see different amounts of detail in a view by zooming in and out.",
             classPrefix: "SemanticZooming"
-        ),
-        Example(
-            title: "Heatmap",
-            detail: "Display a heatmap of earthquakes in America using clustering and predicates.",
-            classPrefix: "Heatmap"
         )
     ]
 }

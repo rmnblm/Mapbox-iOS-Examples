@@ -20,24 +20,30 @@ class ClusteringViewController: UIViewController, MGLMapViewDelegate {
     private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
-        var options = [String : Any]()
-        options[MGLGeoJSONClusterOption] = true
-        options[MGLGeoJSONClusterRadiusOption] = 42
-        options[MGLGeoJSONClusterMaximumZoomLevelOption] = 98
-        options[MGLGeoJSONMaximumZoomLevelOption] = 99
-        options[MGLGeoJSONToleranceOption] = 0.42
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcd", url: geoJSONURL, options: options)
+        let options = [MGLGeoJSONClusterOption: true,
+                       MGLGeoJSONClusterRadiusOption: 50,
+                       MGLGeoJSONClusterMaximumZoomLevelOption: 12] as [String : Any]
+        
+        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcdonalds", url: geoJSONURL, options: options)
         mapView.style().add(geoJSONSource)
         
-        let styleLayer1 = MGLCircleStyleLayer(layerIdentifier: "mcd-layer1", sourceIdentifier: "mcd")!
-        styleLayer1.circleColor = UIColor.orange
-        styleLayer1.circleOpacity = 0.5 as MGLStyleAttributeValue!
-        styleLayer1.circleRadius = 13 as MGLStyleAttributeValue!
-        mapView.style().add(styleLayer1)
+        let layers = [[300.0, UIColor(colorLiteralRed: 229/255.0, green: 94/255.0, blue: 94/255.0, alpha: 1)],
+                      [150.0, UIColor(colorLiteralRed: 249/255.0, green: 136/255.0, blue: 108/255.0, alpha: 1)],
+                      [0.0, UIColor(colorLiteralRed: 251/255.0, green: 176/255.0, blue: 59/255.0, alpha: 1)]]
         
-        let styleLayer2 = MGLCircleStyleLayer(layerIdentifier: "mcd-layer2", sourceIdentifier: "mcd")!
-        styleLayer2.circleColor = UIColor.orange
-        styleLayer2.circleRadius = 10 as MGLStyleAttributeValue!
-        mapView.style().add(styleLayer2)
+        for index in 0..<layers.count {
+            let circles = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", sourceIdentifier: "mcdonalds")!
+            circles.circleColor = layers[index][1] as! UIColor
+            circles.circleRadius = 12 as MGLStyleAttributeValue!
+            
+            let gtePredicate = NSPredicate(format: "%K >= %@", argumentArray: ["point_count", layers[index][0] as! NSNumber])
+            let allPredicate = index == 0 ?
+                gtePredicate :
+                NSCompoundPredicate(andPredicateWithSubpredicates: [gtePredicate, NSPredicate(format: "%K < %@", argumentArray: ["point_count", layers[index - 1][0] as! NSNumber])])
+            
+            circles.predicate = allPredicate
+            
+            mapView.style().add(circles)
+        }
     }
 }

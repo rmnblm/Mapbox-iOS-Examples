@@ -15,9 +15,6 @@
 		30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DE1D97BBEB00819457 /* Assets.xcassets */; };
 		30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3E01D97BBEB00819457 /* LaunchScreen.storyboard */; };
 		30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */; };
-		30E22EB11D9ABD7600F67256 /* Heatmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */; };
-		30E22EB21D9ABD7600F67256 /* HeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */; };
-		30E22EB41D9ABD9B00F67256 /* earthquakes.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */; };
 		30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */; };
 		30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */; };
 		30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */; };
@@ -61,9 +58,6 @@
 		30BAE3E11D97BBEB00819457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30BAE3E31D97BBEB00819457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemanticZoomingDataSource.swift; path = Examples/SemanticZoomingDataSource.swift; sourceTree = "<group>"; };
-		30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Heatmap.storyboard; path = Examples/Heatmap.storyboard; sourceTree = "<group>"; };
-		30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeatmapViewController.swift; path = Examples/HeatmapViewController.swift; sourceTree = "<group>"; };
-		30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = earthquakes.geojson; path = Resources/earthquakes.geojson; sourceTree = "<group>"; };
 		30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackCalloutView.swift; path = Examples/MarkerSelectFeedbackCalloutView.swift; sourceTree = "<group>"; };
 		30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewCell.swift; path = Examples/FilteringViewCell.swift; sourceTree = "<group>"; };
 		30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
@@ -142,19 +136,9 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		30E22EAE1D9ABCDE00F67256 /* Heatmap */ = {
-			isa = PBXGroup;
-			children = (
-				30E22EAF1D9ABD7600F67256 /* Heatmap.storyboard */,
-				30E22EB01D9ABD7600F67256 /* HeatmapViewController.swift */,
-			);
-			name = Heatmap;
-			sourceTree = "<group>";
-		};
 		30E48F6A1D97C06600F6CCB7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				30E22EAE1D9ABCDE00F67256 /* Heatmap */,
 				30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */,
 				30E48FB01D98117700F6CCB7 /* Polygons */,
 				30E48F731D97C27300F6CCB7 /* Clustering */,
@@ -170,7 +154,6 @@
 		30E48F6C1D97C07200F6CCB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				30E22EB31D9ABD9B00F67256 /* earthquakes.geojson */,
 				30E48FBA1D983F0D00F6CCB7 /* siliconvalley.geojson */,
 				30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */,
 				30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */,
@@ -357,14 +340,12 @@
 				308FEC2D1D9858E200499BED /* portland.geojson in Resources */,
 				30E48F7F1D97C2E100F6CCB7 /* Filtering.storyboard in Resources */,
 				30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */,
-				30E22EB41D9ABD9B00F67256 /* earthquakes.geojson in Resources */,
 				30E48F841D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard in Resources */,
 				30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */,
 				30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */,
 				30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */,
 				30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */,
 				30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */,
-				30E22EB11D9ABD7600F67256 /* Heatmap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +461,6 @@
 				30E48FA81D97E79100F6CCB7 /* AsyncPinDroppingViewController.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
 				30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */,
-				30E22EB21D9ABD7600F67256 /* HeatmapViewController.swift in Sources */,
 				3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */,
 				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
 				308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */,
