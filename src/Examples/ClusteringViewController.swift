@@ -13,11 +13,21 @@ class ClusteringViewController: UIViewController {
     
     @IBOutlet var mapView: MGLMapView!
     
-    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        loadData()
+    let clusterLayers = [[1000.0, UIColor(colorLiteralRed: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1), 20.0],
+                         [500.0, UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1), 18.0],
+                         [250.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 15.0],
+                         [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 12.0]]
+    
+    var clusterSizeLabelView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        clusterSizeLabelView = UIView(frame: mapView.frame)
+        view.addSubview(clusterSizeLabelView)
     }
     
-    private func loadData() {
+    func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
         let options = [MGLGeoJSONClusterOption: true,
@@ -27,23 +37,63 @@ class ClusteringViewController: UIViewController {
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcdonalds", url: geoJSONURL, options: options)
         mapView.style().add(geoJSONSource)
         
-        let layers = [[300.0, UIColor(colorLiteralRed: 229/255.0, green: 94/255.0, blue: 94/255.0, alpha: 1)],
-                      [150.0, UIColor(colorLiteralRed: 249/255.0, green: 136/255.0, blue: 108/255.0, alpha: 1)],
-                      [0.0, UIColor(colorLiteralRed: 251/255.0, green: 176/255.0, blue: 59/255.0, alpha: 1)]]
-        
-        for index in 0..<layers.count {
-            let circles = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", source: geoJSONSource)
-            circles.circleColor = layers[index][1] as! UIColor
-            circles.circleRadius = 12 as MGLStyleAttributeValue!
-            
-            let gtePredicate = NSPredicate(format: "%K >= %@", argumentArray: ["point_count", layers[index][0] as! NSNumber])
+        for index in 0..<clusterLayers.count {
+            let gtePredicate = NSPredicate(format: "%K >= %@", argumentArray: ["point_count", clusterLayers[index][0] as! NSNumber])
             let allPredicate = index == 0 ?
                 gtePredicate :
-                NSCompoundPredicate(andPredicateWithSubpredicates: [gtePredicate, NSPredicate(format: "%K < %@", argumentArray: ["point_count", layers[index - 1][0] as! NSNumber])])
+                NSCompoundPredicate(andPredicateWithSubpredicates: [gtePredicate, NSPredicate(format: "%K < %@", argumentArray: ["point_count", clusterLayers[index - 1][0] as! NSNumber])])
             
-            circles.predicate = allPredicate
+            let circleBorder = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)-border", source: geoJSONSource)
+            circleBorder.circleColor = UIColor.white
+            circleBorder.circleRadius = (clusterLayers[index][2] as! Double * 1.2) as MGLStyleAttributeValue
+            circleBorder.predicate = allPredicate
+            mapView.style().add(circleBorder)
             
-            mapView.style().add(circles)
+            let circle = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", source: geoJSONSource)
+            circle.circleColor = clusterLayers[index][1] as! UIColor
+            circle.circleRadius = clusterLayers[index][2] as! MGLStyleAttributeValue
+            circle.predicate = allPredicate
+            mapView.style().add(circle)
         }
+    }
+    
+    
+    func updateClusterSizeLabels() {
+        for feature in mapView.visibleFeatures(in: view.frame, styleLayerIdentifiers: ["cluster-0", "cluster-1", "cluster-2", "cluster-3"]) {
+            if feature is MGLPointFeature && feature.attributes["cluster"] as! Bool == true {
+                let pointFeature = feature as! MGLPointFeature
+                let clusterSize = pointFeature.attributes["point_count"] as! NSNumber
+                let origin = mapView.convert(pointFeature.coordinate, toPointTo: clusterSizeLabelView)
+                let label = UILabel()
+                label.text = clusterSize.stringValue
+                label.sizeToFit()
+                label.center = origin
+                label.textAlignment = .center
+                label.textColor = UIColor.white
+                clusterSizeLabelView.addSubview(label)
+            }
+        }
+    }
+    
+    func clearClusterSizeLabels() {
+        for subView in clusterSizeLabelView.subviews {
+            subView.removeFromSuperview()
+        }
+    }
+}
+
+extension ClusteringViewController : MGLMapViewDelegate {
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        loadData()
+        updateClusterSizeLabels()
+    }
+    
+    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
+        clearClusterSizeLabels()
+    }
+    
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        updateClusterSizeLabels()
     }
 }
