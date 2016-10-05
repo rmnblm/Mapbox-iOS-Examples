@@ -27,8 +27,6 @@
 		30E48F7F1D97C2E100F6CCB7 /* Filtering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F7D1D97C2E100F6CCB7 /* Filtering.storyboard */; };
 		30E48F841D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F811D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard */; };
 		30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */; };
-		30E48F891D97C2EE00F6CCB7 /* Panning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F871D97C2EE00F6CCB7 /* Panning.storyboard */; };
-		30E48F8A1D97C2EE00F6CCB7 /* PanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F881D97C2EE00F6CCB7 /* PanningViewController.swift */; };
 		30E48F8D1D97C2F400F6CCB7 /* PathSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */; };
 		30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */; };
 		30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */; };
@@ -72,8 +70,6 @@
 		30E48F7D1D97C2E100F6CCB7 /* Filtering.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Filtering.storyboard; path = Examples/Filtering.storyboard; sourceTree = "<group>"; };
 		30E48F811D97C2E700F6CCB7 /* MarkerSelectFeedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MarkerSelectFeedback.storyboard; path = Examples/MarkerSelectFeedback.storyboard; sourceTree = "<group>"; };
 		30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackViewController.swift; path = Examples/MarkerSelectFeedbackViewController.swift; sourceTree = "<group>"; };
-		30E48F871D97C2EE00F6CCB7 /* Panning.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Panning.storyboard; path = Examples/Panning.storyboard; sourceTree = "<group>"; };
-		30E48F881D97C2EE00F6CCB7 /* PanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanningViewController.swift; path = Examples/PanningViewController.swift; sourceTree = "<group>"; };
 		30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PathSelection.storyboard; path = Examples/PathSelection.storyboard; sourceTree = "<group>"; };
 		30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionViewController.swift; path = Examples/PathSelectionViewController.swift; sourceTree = "<group>"; };
 		30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SemanticZooming.storyboard; path = Examples/SemanticZooming.storyboard; sourceTree = "<group>"; };
@@ -158,7 +154,6 @@
 				30E48F731D97C27300F6CCB7 /* Clustering */,
 				30E48F741D97C27C00F6CCB7 /* Filtering */,
 				30E48F751D97C28900F6CCB7 /* MarkerSelectFeedback */,
-				30E48F761D97C29100F6CCB7 /* Panning */,
 				30E48F771D97C29600F6CCB7 /* PathSelection */,
 				30E48F781D97C29C00F6CCB7 /* SemanticZooming */,
 			);
@@ -205,15 +200,6 @@
 				30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */,
 			);
 			name = MarkerSelectFeedback;
-			sourceTree = "<group>";
-		};
-		30E48F761D97C29100F6CCB7 /* Panning */ = {
-			isa = PBXGroup;
-			children = (
-				30E48F871D97C2EE00F6CCB7 /* Panning.storyboard */,
-				30E48F881D97C2EE00F6CCB7 /* PanningViewController.swift */,
-			);
-			name = Panning;
 			sourceTree = "<group>";
 		};
 		30E48F771D97C29600F6CCB7 /* PathSelection */ = {
@@ -345,7 +331,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */,
-				30E48F891D97C2EE00F6CCB7 /* Panning.storyboard in Resources */,
 				30E48FA71D97E79100F6CCB7 /* AsyncPinDropping.storyboard in Resources */,
 				30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */,
 				30E48FBB1D983F0D00F6CCB7 /* siliconvalley.geojson in Resources */,
@@ -480,7 +465,6 @@
 				3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */,
 				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
 				308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */,
-				30E48F8A1D97C2EE00F6CCB7 /* PanningViewController.swift in Sources */,
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,
 			);

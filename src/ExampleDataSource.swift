@@ -49,11 +49,6 @@ struct ExampleDataSource {
             classPrefix: "MarkerSelectFeedback"
         ),
         Example(
-            title: "Panning",
-            detail: "Check the panning performance with a huge amount of data.",
-            classPrefix: "Panning"
-        ),
-        Example(
             title: "Path Selection",
             detail: "Styled polyline with direct user feedback (workaround for issue #2082)",
             classPrefix: "PathSelection"
