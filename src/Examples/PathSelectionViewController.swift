@@ -9,11 +9,13 @@
 import UIKit
 import Mapbox
 
-class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
+class PathSelectionViewController: UIViewController {
     
     @IBOutlet var mapView: MGLMapView!
     
     var annotation: MGLPointAnnotation?
+    
+    var highlightedLine: MGLLineStyleLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,24 +37,25 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
             print(feature.attributes)
             
             if feature is MGLPolylineFeature {
-                let lineFeature = feature as! MGLPolylineFeature
-                
-                annotation = MGLPointAnnotation()
-                annotation!.coordinate = lineFeature.coordinate
-                annotation!.title = lineFeature.title
-                annotation!.subtitle = lineFeature.subtitle
-                mapView.addAnnotation(annotation!)
+                highlightedLine.predicate = NSPredicate(format: "name == 'Crema to Council Crest'")
                 return
             }
         }
+        
+        // If the tap wasn't on the line, unselect it
+        clearHighlighting()
     }
     
-    private func squareFrom(location: CGPoint) -> CGRect {
+    func clearHighlighting() {
+        highlightedLine.predicate = NSPredicate(value: false)
+    }
+    
+    func squareFrom(location: CGPoint) -> CGRect {
         let length = 50.0
         return CGRect(x: Double(location.x - CGFloat(length / 2)), y: Double(location.y - CGFloat(length / 2)), width: length, height: length)
     }
     
-    public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let geoJSONURL = Bundle.main.url(forResource: "portland", withExtension: "geojson")!
         
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "portland", url: geoJSONURL)
@@ -60,13 +63,13 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
         
         let styleLayer = MGLLineStyleLayer(layerIdentifier: "portland-layer", source: geoJSONSource)
         styleLayer.lineWidth = 5 as MGLStyleAttributeValue!
-        styleLayer.lineColor = UIColor.blue as MGLStyleAttributeValue!
+        styleLayer.lineColor = UIColor.gray
         mapView.style().add(styleLayer)
-    }
-    
-    // MARK: - MGLMapViewDelegate methods
-    
-    public func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
+        
+        highlightedLine = MGLLineStyleLayer(layerIdentifier: "trackhl-layer", source: geoJSONSource)
+        highlightedLine.lineWidth = 5 as MGLStyleAttributeValue!
+        highlightedLine.lineColor = UIColor(colorLiteralRed: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1)
+        highlightedLine.predicate = NSPredicate(value: false)
+        mapView.style().add(highlightedLine)
     }
 }
