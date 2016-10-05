@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class ClusteringViewController: UIViewController, MGLMapViewDelegate {
+class ClusteringViewController: UIViewController {
     
     @IBOutlet var mapView: MGLMapView!
     
@@ -32,7 +32,7 @@ class ClusteringViewController: UIViewController, MGLMapViewDelegate {
                       [0.0, UIColor(colorLiteralRed: 251/255.0, green: 176/255.0, blue: 59/255.0, alpha: 1)]]
         
         for index in 0..<layers.count {
-            let circles = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", sourceIdentifier: "mcdonalds")!
+            let circles = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", source: geoJSONSource)
             circles.circleColor = layers[index][1] as! UIColor
             circles.circleRadius = 12 as MGLStyleAttributeValue!
             

@@ -1,5 +1,5 @@
 //
-//  PolygonsViewController.swift
+//  PolygonsV$iewController.swift
 //  Mapbox-iOS-Examples
 //
 //  Created by Roman Blum on 21.09.16.
@@ -21,7 +21,7 @@ class PolygonsViewController: UIViewController, MGLMapViewDelegate {
         let geoJSONURL = Bundle.main.url(forResource: "amsterdam", withExtension: "geojson")!
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "ams", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
-        let styleLayer = MGLFillStyleLayer(layerIdentifier: "ams-layer", sourceIdentifier: "ams")!
+        let styleLayer = MGLFillStyleLayer(layerIdentifier: "ams-layer", source: geoJSONSource)
         styleLayer.fillColor = UIColor.purple
         styleLayer.fillOpacity = 0.5 as MGLStyleAttributeValue!
         styleLayer.fillOutlineColor = UIColor.purple

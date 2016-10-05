@@ -22,7 +22,7 @@ class PanningViewController: UIViewController, MGLMapViewDelegate {
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcd", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "mcd-layer", sourceIdentifier: "mcd")!
+        let styleLayer = MGLCircleStyleLayer(layerIdentifier: "mcd-layer", source: geoJSONSource)
         styleLayer.circleColor = UIColor.orange
         styleLayer.circleRadius = 5 as MGLStyleAttributeValue!
         mapView.style().add(styleLayer)

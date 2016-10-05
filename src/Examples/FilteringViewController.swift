@@ -9,9 +9,11 @@
 import UIKit
 import Mapbox
 
-class FilteringViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,  MGLMapViewDelegate {
+class FilteringViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let dataSource = FilteringDataSource()
+    
+    private var geoJSONSource: MGLGeoJSONSource!
     
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var tableView: UITableView!
@@ -19,7 +21,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "siliconvalley", withExtension: "geojson")!
         
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "sv", url: geoJSONURL)
+        geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "sv", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
         for layer in dataSource.layers {
@@ -28,7 +30,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     private func add(layer: FilteringLayer) {
-        let styleLayer = MGLSymbolStyleLayer(layerIdentifier: layer.title, sourceIdentifier: "sv")!
+        let styleLayer = MGLSymbolStyleLayer(layerIdentifier: layer.title, source: geoJSONSource)
         styleLayer.predicate = layer.predicate
         styleLayer.iconImage = layer.iconName as MGLStyleAttributeValue!
         mapView.style().add(styleLayer)

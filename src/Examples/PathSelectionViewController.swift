@@ -58,7 +58,7 @@ class PathSelectionViewController: UIViewController, MGLMapViewDelegate {
         let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "portland", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
-        let styleLayer = MGLLineStyleLayer(layerIdentifier: "portland-layer", sourceIdentifier: "portland")!
+        let styleLayer = MGLLineStyleLayer(layerIdentifier: "portland-layer", source: geoJSONSource)
         styleLayer.lineWidth = 5 as MGLStyleAttributeValue!
         styleLayer.lineColor = UIColor.blue as MGLStyleAttributeValue!
         mapView.style().add(styleLayer)
