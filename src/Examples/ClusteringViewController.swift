@@ -18,15 +18,6 @@ class ClusteringViewController: UIViewController {
                          [250.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 15.0],
                          [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 12.0]]
     
-    var clusterSizeLabelView: UIView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        clusterSizeLabelView = UIView(frame: mapView.frame)
-        view.addSubview(clusterSizeLabelView)
-    }
-    
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
@@ -55,30 +46,11 @@ class ClusteringViewController: UIViewController {
             circle.predicate = allPredicate
             mapView.style().add(circle)
         }
-    }
-    
-    
-    func updateClusterSizeLabels() {
-        for feature in mapView.visibleFeatures(in: view.frame, styleLayerIdentifiers: ["cluster-0", "cluster-1", "cluster-2", "cluster-3"]) {
-            if feature is MGLPointFeature && feature.attributes["cluster"] as! Bool == true {
-                let pointFeature = feature as! MGLPointFeature
-                let clusterSize = pointFeature.attributes["point_count"] as! NSNumber
-                let origin = mapView.convert(pointFeature.coordinate, toPointTo: clusterSizeLabelView)
-                let label = UILabel()
-                label.text = clusterSize.stringValue
-                label.sizeToFit()
-                label.center = origin
-                label.textAlignment = .center
-                label.textColor = UIColor.white
-                clusterSizeLabelView.addSubview(label)
-            }
-        }
-    }
-    
-    func clearClusterSizeLabels() {
-        for subView in clusterSizeLabelView.subviews {
-            subView.removeFromSuperview()
-        }
+        
+        let clusterPointCountLayer = MGLSymbolStyleLayer(layerIdentifier: "cpc-layer", source: geoJSONSource)
+        clusterPointCountLayer.textField = "{point_count}" as MGLStyleAttributeValue!
+        clusterPointCountLayer.textColor = UIColor.white
+        mapView.style().add(clusterPointCountLayer)
     }
 }
 
@@ -86,14 +58,5 @@ extension ClusteringViewController : MGLMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         loadData()
-        updateClusterSizeLabels()
-    }
-    
-    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
-        clearClusterSizeLabels()
-    }
-    
-    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
-        updateClusterSizeLabels()
     }
 }
