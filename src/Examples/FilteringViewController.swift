@@ -25,15 +25,13 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
         mapView.style().add(geoJSONSource)
         
         for layer in dataSource.layers {
-            add(layer: layer)
+            let styleLayer = MGLSymbolStyleLayer(layerIdentifier: layer.title, source: geoJSONSource)
+            styleLayer.predicate = layer.predicate
+            styleLayer.iconImage = layer.iconName as MGLStyleAttributeValue!
+            mapView.style().add(styleLayer)
+            
+            layer.styleLayer = styleLayer
         }
-    }
-    
-    private func add(layer: FilteringLayer) {
-        let styleLayer = MGLSymbolStyleLayer(layerIdentifier: layer.title, source: geoJSONSource)
-        styleLayer.predicate = layer.predicate
-        styleLayer.iconImage = layer.iconName as MGLStyleAttributeValue!
-        mapView.style().add(styleLayer)
     }
     
     // MARK: MGLMapViewDelegate
@@ -61,13 +59,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func filterStateChanged(sender: UISwitch) {
         let layer = dataSource.layers[sender.tag]
-        if (sender.isOn) {
-            add(layer: layer)
-        } else {
-            if let styleLayer = mapView.style().layer(withIdentifier: layer.title) {
-                mapView.style().remove(styleLayer)
-            }
-        }
+        layer.styleLayer.isVisible = sender.isOn
     }
     
     // MARK: UITableViewDelegate

@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import Mapbox
 
-struct FilteringLayer {
+class FilteringLayer {
     let title: String
     let iconName: String
     let color: UIColor
     let predicate: NSPredicate
+    
+    public var styleLayer: MGLBaseStyleLayer!
+    
+    init(title: String, iconName: String, color: UIColor, predicate: NSPredicate) {
+        self.title = title
+        self.iconName = iconName
+        self.color = color
+        self.predicate = predicate
+    }
 }
 
 struct FilteringDataSource {
