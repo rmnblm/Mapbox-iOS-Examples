@@ -13,11 +13,11 @@ class OfflineViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet var mapView: MGLMapView!
     
+    var blurView: UIVisualEffectView!
     var progressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.styleURL = MGLStyle.darkStyleURL(withVersion: 9)
         mapView.setCenter(CLLocationCoordinate2DMake(22.27933, 114.16281), animated: false)
         mapView.zoomLevel = 13
         
@@ -72,11 +72,17 @@ class OfflineViewController: UIViewController, MGLMapViewDelegate {
             let progressPercentage = Float(completedResources) / Float(expectedResources)
             
             // Setup the progress bar.
-            if progressView == nil {
+            if blurView == nil {
+                blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+                blurView.bounds = view.bounds
+                blurView.center = view.center
+                
                 progressView = UIProgressView(progressViewStyle: .default)
                 let frame = view.bounds.size
                 progressView.frame = CGRect(x: frame.width / 4, y: frame.height * 0.75, width: frame.width / 2, height: 10)
-                view.addSubview(progressView)
+                
+                blurView.addSubview(progressView)
+                view.addSubview(blurView)
             }
             
             progressView.progress = progressPercentage
@@ -85,7 +91,7 @@ class OfflineViewController: UIViewController, MGLMapViewDelegate {
             if completedResources == expectedResources {
                 let byteCount = ByteCountFormatter.string(fromByteCount: Int64(pack.progress.countOfBytesCompleted), countStyle: ByteCountFormatter.CountStyle.memory)
                 showAlert(title: "Completed", message: "Offline pack “\(userInfo["name"])” completed: \(byteCount), \(completedResources) resources")
-                progressView.removeFromSuperview()
+                blurView.removeFromSuperview()
             } else {
                 // Otherwise, print download/verification progress.
                 print("Offline pack “\(userInfo["name"])” has \(completedResources) of \(expectedResources) resources — \(progressPercentage * 100)%.")
