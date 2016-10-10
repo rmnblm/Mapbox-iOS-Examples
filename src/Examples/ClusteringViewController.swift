@@ -13,10 +13,10 @@ class ClusteringViewController: UIViewController {
     
     @IBOutlet var mapView: MGLMapView!
     
-    let clusterLayers = [[1000.0, UIColor(colorLiteralRed: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1), 20.0],
-                         [500.0, UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1), 18.0],
-                         [250.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 15.0],
-                         [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 12.0]]
+    let clusterLayers = [[1000.0, UIColor(colorLiteralRed: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1), 28.0],
+                         [300.0, UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1), 24.0],
+                         [100.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 18.0],
+                         [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 15.0]]
     
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
