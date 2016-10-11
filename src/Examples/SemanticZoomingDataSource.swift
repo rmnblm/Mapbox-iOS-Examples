@@ -9,22 +9,11 @@
 import UIKit
 import Mapbox
 
-class SemanticZoomingLayer {
+struct SemanticZoomingLayer {
     let title: String
     let color: UIColor
     let predicate: NSPredicate
     let minimumZoomLevel: Float
-    
-    init(title: String, color: UIColor, predicate: NSPredicate, minimumZoomLevel: Float) {
-        self.title = title
-        self.color = color
-        self.predicate = predicate
-        self.minimumZoomLevel = minimumZoomLevel
-    }
-    
-    // Workaround until issue #6361 is resolved
-    // https://github.com/mapbox/mapbox-gl-native/issues/6361
-    var styleLayer: MGLStyleLayer?
 }
 
 struct SemanticZoomingDataSource {

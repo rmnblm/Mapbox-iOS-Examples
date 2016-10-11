@@ -37,7 +37,5 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
         styleLayer.circleColor = layer.color
         styleLayer.minimumZoomLevel = layer.minimumZoomLevel
         mapView.style().add(styleLayer)
-        
-        layer.styleLayer = styleLayer
     }
 }
