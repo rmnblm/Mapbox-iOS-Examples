@@ -23,7 +23,7 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     
     private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "siliconvalley", withExtension: "geojson")!
-        geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "sv", url: geoJSONURL)
+        geoJSONSource = MGLGeoJSONSource(identifier: "sv", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
         for layer in dataSource.layers {
@@ -32,9 +32,9 @@ class SemanticZoomingViewController: UIViewController, MGLMapViewDelegate {
     }
     
     private func add(layer: SemanticZoomingLayer) {
-        let styleLayer = MGLCircleStyleLayer(layerIdentifier: layer.title, source: geoJSONSource)
+        let styleLayer = MGLCircleStyleLayer(identifier: layer.title, source: geoJSONSource)
         styleLayer.predicate = layer.predicate
-        styleLayer.circleColor = layer.color
+        styleLayer.circleColor = MGLStyleConstantValue(rawValue: layer.color)
         styleLayer.minimumZoomLevel = layer.minimumZoomLevel
         mapView.style().add(styleLayer)
     }

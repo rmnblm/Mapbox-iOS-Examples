@@ -58,17 +58,17 @@ class PathSelectionViewController: UIViewController {
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let geoJSONURL = Bundle.main.url(forResource: "portland", withExtension: "geojson")!
         
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "portland", url: geoJSONURL)
+        let geoJSONSource = MGLGeoJSONSource(identifier: "portland", url: geoJSONURL)
         mapView.style().add(geoJSONSource)
         
-        let styleLayer = MGLLineStyleLayer(layerIdentifier: "portland-layer", source: geoJSONSource)
-        styleLayer.lineWidth = 5 as MGLStyleAttributeValue!
-        styleLayer.lineColor = UIColor.gray
+        let styleLayer = MGLLineStyleLayer(identifier: "portland-layer", source: geoJSONSource)
+        styleLayer.lineWidth = MGLStyleConstantValue(rawValue: 5)
+        styleLayer.lineColor = MGLStyleConstantValue(rawValue: UIColor.gray)
         mapView.style().add(styleLayer)
         
-        highlightedLine = MGLLineStyleLayer(layerIdentifier: "trackhl-layer", source: geoJSONSource)
-        highlightedLine.lineWidth = 5 as MGLStyleAttributeValue!
-        highlightedLine.lineColor = UIColor(colorLiteralRed: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1)
+        highlightedLine = MGLLineStyleLayer(identifier: "trackhl-layer", source: geoJSONSource)
+        highlightedLine.lineWidth = MGLStyleConstantValue(rawValue: 5)
+        highlightedLine.lineColor = MGLStyleConstantValue(rawValue: UIColor(colorLiteralRed: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1) )
         highlightedLine.predicate = NSPredicate(value: false)
         mapView.style().add(highlightedLine)
     }

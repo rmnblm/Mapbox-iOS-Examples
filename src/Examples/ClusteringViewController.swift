@@ -21,11 +21,14 @@ class ClusteringViewController: UIViewController {
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
-        let options = [MGLGeoJSONClusterOption: true,
-                       MGLGeoJSONClusterRadiusOption: 50,
-                       MGLGeoJSONClusterMaximumZoomLevelOption: 12] as [String : Any]
+        var options = [String : Any]()
+        options[MGLGeoJSONClusterOption] = true
+        options[MGLGeoJSONClusterRadiusOption] = 42
+        options[MGLGeoJSONClusterMaximumZoomLevelOption] = 20
+        options[MGLGeoJSONMaximumZoomLevelOption] = 20
+        options[MGLGeoJSONToleranceOption] = 0.42
         
-        let geoJSONSource = MGLGeoJSONSource(sourceIdentifier: "mcdonalds", url: geoJSONURL, options: options)
+        let geoJSONSource = MGLGeoJSONSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
         mapView.style().add(geoJSONSource)
         
         for index in 0..<clusterLayers.count {
@@ -34,22 +37,24 @@ class ClusteringViewController: UIViewController {
                 gtePredicate :
                 NSCompoundPredicate(andPredicateWithSubpredicates: [gtePredicate, NSPredicate(format: "%K < %@", argumentArray: ["point_count", clusterLayers[index - 1][0] as! NSNumber])])
             
-            let circleBorder = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)-border", source: geoJSONSource)
-            circleBorder.circleColor = UIColor.white
-            circleBorder.circleRadius = (clusterLayers[index][2] as! Double * 1.2) as MGLStyleAttributeValue
+            let circleBorder = MGLCircleStyleLayer(identifier: "cluster-\(index)-border", source: geoJSONSource)
+            circleBorder.circleColor = MGLStyleConstantValue(rawValue: UIColor.white)
+            let radius = clusterLayers[index][2] as! Double * 1.2
+            circleBorder.circleRadius = MGLStyleConstantValue(rawValue: radius as NSNumber)
             circleBorder.predicate = allPredicate
             mapView.style().add(circleBorder)
             
-            let circle = MGLCircleStyleLayer(layerIdentifier: "cluster-\(index)", source: geoJSONSource)
-            circle.circleColor = clusterLayers[index][1] as! UIColor
-            circle.circleRadius = clusterLayers[index][2] as! MGLStyleAttributeValue
+            let circle = MGLCircleStyleLayer(identifier: "cluster-\(index)", source: geoJSONSource)
+            circle.circleColor = MGLStyleConstantValue(rawValue: clusterLayers[index][1] as! UIColor)
+            let radius2 = clusterLayers[index][2] as! Double
+            circle.circleRadius = MGLStyleConstantValue(rawValue: radius2 as NSNumber)
             circle.predicate = allPredicate
             mapView.style().add(circle)
         }
         
-        let clusterPointCountLayer = MGLSymbolStyleLayer(layerIdentifier: "cpc-layer", source: geoJSONSource)
-        clusterPointCountLayer.textField = "{point_count}" as MGLStyleAttributeValue!
-        clusterPointCountLayer.textColor = UIColor.white
+        let clusterPointCountLayer = MGLSymbolStyleLayer(identifier: "cpc-layer", source: geoJSONSource)
+        clusterPointCountLayer.textField = MGLStyleConstantValue(rawValue: "{point_count}")
+        clusterPointCountLayer.textColor = MGLStyleConstantValue(rawValue: UIColor.white)
         mapView.style().add(clusterPointCountLayer)
     }
 }
