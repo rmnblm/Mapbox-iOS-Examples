@@ -15,7 +15,7 @@ class FilteringLayer {
     let color: UIColor
     let predicate: NSPredicate
     
-    public var styleLayer: MGLBaseStyleLayer!
+    public var styleLayer: MGLStyleLayer!
     
     init(title: String, iconName: String, color: UIColor, predicate: NSPredicate) {
         self.title = title
