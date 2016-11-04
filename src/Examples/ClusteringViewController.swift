@@ -24,8 +24,8 @@ class ClusteringViewController: UIViewController {
         var options = [String : Any]()
         options[MGLGeoJSONClusterOption] = true
         options[MGLGeoJSONClusterRadiusOption] = 42
-        options[MGLGeoJSONClusterMaximumZoomLevelOption] = 98
-        options[MGLGeoJSONMaximumZoomLevelOption] = 99
+        options[MGLGeoJSONClusterMaximumZoomLevelOption] = 20
+        options[MGLGeoJSONMaximumZoomLevelOption] = 20
         options[MGLGeoJSONToleranceOption] = 0.42
         
         let geoJSONSource = MGLGeoJSONSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
