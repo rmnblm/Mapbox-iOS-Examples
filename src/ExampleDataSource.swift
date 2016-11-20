@@ -62,6 +62,11 @@ struct ExampleDataSource {
             title: "Offline",
             detail: "Download an offline pack and track its progress.",
             classPrefix: "Offline"
+        ),
+        Example(
+            title: "Geocoder",
+            detail: "Search for all type of map elements using the Mapbox Geocoding service.",
+            classPrefix: "Geocoder"
         )
     ]
 }

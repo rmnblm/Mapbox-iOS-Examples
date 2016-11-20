@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301E273D1DE1CEB300AB4401 /* Geocoder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301E273C1DE1CEB300AB4401 /* Geocoder.storyboard */; };
+		301E273F1DE1CEC500AB4401 /* GeocoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301E273E1DE1CEC500AB4401 /* GeocoderViewController.swift */; };
+		301E27431DE1DC9800AB4401 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301E27421DE1DC9800AB4401 /* BundleExtensions.swift */; };
 		3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */; };
 		307738F71DACE59300CAF2A7 /* OfflineDownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307738F61DACE59300CAF2A7 /* OfflineDownloadProgressView.swift */; };
 		307738FB1DACF47200CAF2A7 /* OfflineDownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307738FA1DACF47200CAF2A7 /* OfflineDownloadDelegate.swift */; };
@@ -50,6 +53,9 @@
 		0101E464E567E9485184AA18 /* Pods-Mapbox-iOS-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.debug.xcconfig"; sourceTree = "<group>"; };
 		081FB5B8CEEB8BFF573F489E /* Pods-Mapbox-iOS-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapbox-iOS-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mapbox-iOS-Examples/Pods-Mapbox-iOS-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mapbox_iOS_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		301E273C1DE1CEB300AB4401 /* Geocoder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Geocoder.storyboard; path = Examples/Geocoder.storyboard; sourceTree = "<group>"; };
+		301E273E1DE1CEC500AB4401 /* GeocoderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeocoderViewController.swift; path = Examples/GeocoderViewController.swift; sourceTree = "<group>"; };
+		301E27421DE1DC9800AB4401 /* BundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BundleExtensions.swift; path = Extensions/BundleExtensions.swift; sourceTree = "<group>"; };
 		3022916E1D99A5EB0036D338 /* FilteringDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringDataSource.swift; path = Examples/FilteringDataSource.swift; sourceTree = "<group>"; };
 		307738F61DACE59300CAF2A7 /* OfflineDownloadProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineDownloadProgressView.swift; path = Examples/OfflineDownloadProgressView.swift; sourceTree = "<group>"; };
 		307738FA1DACF47200CAF2A7 /* OfflineDownloadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineDownloadDelegate.swift; path = Examples/OfflineDownloadDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301E273B1DE1CE9A00AB4401 /* Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				301E273C1DE1CEB300AB4401 /* Geocoder.storyboard */,
+				301E273E1DE1CEC500AB4401 /* GeocoderViewController.swift */,
+			);
+			name = Geocoder;
+			sourceTree = "<group>";
+		};
 		30BAE3CB1D97BBEB00819457 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +169,7 @@
 		30E48F6A1D97C06600F6CCB7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				301E273B1DE1CE9A00AB4401 /* Geocoder */,
 				30E1273A1DA3D1AE007CDC23 /* Offline */,
 				30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */,
 				30E48FB01D98117700F6CCB7 /* Polygons */,
@@ -249,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */,
+				301E27421DE1DC9800AB4401 /* BundleExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +366,7 @@
 				30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */,
 				30E1273D1DA3D1FE007CDC23 /* Offline.storyboard in Resources */,
 				30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */,
+				301E273D1DE1CEB300AB4401 /* Geocoder.storyboard in Resources */,
 				30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */,
 				30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */,
 				30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */,
@@ -458,7 +476,9 @@
 				30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */,
 				30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */,
 				30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */,
+				301E27431DE1DC9800AB4401 /* BundleExtensions.swift in Sources */,
 				30E1273E1DA3D1FE007CDC23 /* OfflineViewController.swift in Sources */,
+				301E273F1DE1CEC500AB4401 /* GeocoderViewController.swift in Sources */,
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */,
 				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
