@@ -9,8 +9,8 @@
 import Foundation
 
 extension Bundle {
-    func valueFromPList<T>(named: String, key: String) -> T? {
-        guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
+    func valueFromPList<T>(named fileName: String, key: String) -> T? {
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "plist") else {
             return nil
         }
 
