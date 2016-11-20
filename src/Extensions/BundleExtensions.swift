@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bundle {
-    func plist<T>(named: String, key: String) -> T? {
+    func valueFromPList<T>(named: String, key: String) -> T? {
         guard let path = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
             return nil
         }
