@@ -21,12 +21,12 @@ class ClusteringViewController: UIViewController {
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
-        var options = [String : Any]()
-        options[MGLGeoJSONClusterOption] = true
-        options[MGLGeoJSONClusterRadiusOption] = 42
-        options[MGLGeoJSONClusterMaximumZoomLevelOption] = 20
-        options[MGLGeoJSONMaximumZoomLevelOption] = 20
-        options[MGLGeoJSONToleranceOption] = 0.42
+        var options = [MGLGeoJSONSourceOption : Any]()
+        options[.clustered] = true
+        options[.clusterRadius] = 42
+        options[.maximumZoomLevelForClustering] = 20
+        options[.maximumZoomLevel] = 20
+        options[.simplificationTolerance] = 0.42
         
         let geoJSONSource = MGLGeoJSONSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
         mapView.style().add(geoJSONSource)
