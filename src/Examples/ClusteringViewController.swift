@@ -17,17 +17,17 @@ class ClusteringViewController: UIViewController {
                          [300.0, UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1), 24.0],
                          [100.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 18.0],
                          [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 15.0]]
-    
+
+    let maximumClusterZoomLevel: Float = 12
+
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
         var options = [MGLGeoJSONSourceOption : Any]()
         options[.clustered] = true
-        options[.clusterRadius] = 42
-        options[.maximumZoomLevelForClustering] = 20
-        options[.maximumZoomLevel] = 20
-        options[.simplificationTolerance] = 0.42
-        
+        options[.clusterRadius] = 100
+        options[.maximumZoomLevelForClustering] = maximumClusterZoomLevel
+
         let geoJSONSource = MGLGeoJSONSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
         mapView.style().add(geoJSONSource)
         
@@ -55,7 +55,16 @@ class ClusteringViewController: UIViewController {
         let clusterPointCountLayer = MGLSymbolStyleLayer(identifier: "cpc-layer", source: geoJSONSource)
         clusterPointCountLayer.textField = MGLStyleConstantValue(rawValue: "{point_count}")
         clusterPointCountLayer.textColor = MGLStyleConstantValue(rawValue: UIColor.white)
+        clusterPointCountLayer.maximumZoomLevel = maximumClusterZoomLevel
         mapView.style().add(clusterPointCountLayer)
+
+
+        mapView.style().setImage(UIImage(named: "Pin")!, forName: "pin-icon")
+        let pinLayer = MGLSymbolStyleLayer(identifier: "pin-layer", source: geoJSONSource)
+        pinLayer.iconImage = MGLStyleValue(rawValue: "pin-icon")
+        pinLayer.minimumZoomLevel = maximumClusterZoomLevel
+        pinLayer.iconAllowOverlap = MGLStyleValue(rawValue: NSNumber(booleanLiteral: true))
+        mapView.style().add(pinLayer)
     }
 }
 
