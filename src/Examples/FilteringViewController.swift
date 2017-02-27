@@ -13,7 +13,7 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private let dataSource = FilteringDataSource()
     
-    private var geoJSONSource: MGLGeoJSONSource!
+    private var geoJSONSource: MGLShapeSource!
     
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var tableView: UITableView!
@@ -21,14 +21,14 @@ class FilteringViewController: UIViewController, UITableViewDelegate, UITableVie
     private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "siliconvalley", withExtension: "geojson")!
         
-        geoJSONSource = MGLGeoJSONSource(identifier: "sv", url: geoJSONURL)
-        mapView.style().add(geoJSONSource)
+        geoJSONSource = MGLShapeSource(identifier: "sv", url: geoJSONURL)
+        mapView.style?.addSource(geoJSONSource)
         
         for layer in dataSource.layers {
             let styleLayer = MGLSymbolStyleLayer(identifier: layer.title, source: geoJSONSource)
             styleLayer.predicate = layer.predicate
             //styleLayer.iconImage = MGLStyleConstantValue(rawValue: layer.name)
-            mapView.style().add(styleLayer)
+            mapView.style?.addLayer(styleLayer)
             
             layer.styleLayer = styleLayer
         }
