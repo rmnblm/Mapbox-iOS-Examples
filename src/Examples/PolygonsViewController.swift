@@ -19,13 +19,13 @@ class PolygonsViewController: UIViewController, MGLMapViewDelegate {
     
     private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "amsterdam", withExtension: "geojson")!
-        let geoJSONSource = MGLGeoJSONSource(identifier: "ams", url: geoJSONURL)
-        mapView.style().add(geoJSONSource)
+        let geoJSONSource = MGLShapeSource(identifier: "ams", url: geoJSONURL)
+        mapView.style?.addSource(geoJSONSource)
         let styleLayer = MGLFillStyleLayer(identifier: "ams-layer", source: geoJSONSource)
         styleLayer.fillColor = MGLStyleConstantValue(rawValue: UIColor.purple)
         styleLayer.fillOpacity = MGLStyleConstantValue(rawValue: 0.5)
         styleLayer.fillOutlineColor = MGLStyleConstantValue(rawValue: UIColor.purple)
-        mapView.style().add(styleLayer)
+        mapView.style?.addLayer(styleLayer)
     }
     
 }

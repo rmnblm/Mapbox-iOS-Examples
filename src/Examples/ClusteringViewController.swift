@@ -23,13 +23,13 @@ class ClusteringViewController: UIViewController {
     func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
         
-        var options = [MGLGeoJSONSourceOption : Any]()
+        var options = [MGLShapeSourceOption : Any]()
         options[.clustered] = true
         options[.clusterRadius] = 100
         options[.maximumZoomLevelForClustering] = maximumClusterZoomLevel
 
-        let geoJSONSource = MGLGeoJSONSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
-        mapView.style().add(geoJSONSource)
+        let geoJSONSource = MGLShapeSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
+        mapView.style?.addSource(geoJSONSource)
         
         for index in 0..<clusterLayers.count {
             let gtePredicate = NSPredicate(format: "%K >= %@", argumentArray: ["point_count", clusterLayers[index][0] as! NSNumber])
@@ -42,29 +42,28 @@ class ClusteringViewController: UIViewController {
             let radius = clusterLayers[index][2] as! Double * 1.2
             circleBorder.circleRadius = MGLStyleConstantValue(rawValue: radius as NSNumber)
             circleBorder.predicate = allPredicate
-            mapView.style().add(circleBorder)
+            mapView.style?.addLayer(circleBorder)
             
             let circle = MGLCircleStyleLayer(identifier: "cluster-\(index)", source: geoJSONSource)
             circle.circleColor = MGLStyleConstantValue(rawValue: clusterLayers[index][1] as! UIColor)
             let radius2 = clusterLayers[index][2] as! Double
             circle.circleRadius = MGLStyleConstantValue(rawValue: radius2 as NSNumber)
             circle.predicate = allPredicate
-            mapView.style().add(circle)
+            mapView.style?.addLayer(circle)
         }
         
         let clusterPointCountLayer = MGLSymbolStyleLayer(identifier: "cpc-layer", source: geoJSONSource)
-        clusterPointCountLayer.textField = MGLStyleConstantValue(rawValue: "{point_count}")
+        clusterPointCountLayer.text = MGLStyleConstantValue(rawValue: "{point_count}")
         clusterPointCountLayer.textColor = MGLStyleConstantValue(rawValue: UIColor.white)
         clusterPointCountLayer.maximumZoomLevel = maximumClusterZoomLevel
-        mapView.style().add(clusterPointCountLayer)
+        mapView.style?.addLayer(clusterPointCountLayer)
 
-
-        mapView.style().setImage(UIImage(named: "Pin")!, forName: "pin-icon")
+        mapView.style?.setImage(UIImage(named: "Pin")!, forName: "pin-icon")
         let pinLayer = MGLSymbolStyleLayer(identifier: "pin-layer", source: geoJSONSource)
-        pinLayer.iconImage = MGLStyleValue(rawValue: "pin-icon")
+        pinLayer.iconImageName = MGLStyleValue(rawValue: "pin-icon")
         pinLayer.minimumZoomLevel = maximumClusterZoomLevel
-        pinLayer.iconAllowOverlap = MGLStyleValue(rawValue: NSNumber(booleanLiteral: true))
-        mapView.style().add(pinLayer)
+        pinLayer.iconAllowsOverlap = MGLStyleValue(rawValue: NSNumber(booleanLiteral: true))
+        mapView.style?.addLayer(pinLayer)
     }
 }
 
