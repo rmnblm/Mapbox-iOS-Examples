@@ -9,67 +9,71 @@
 import UIKit
 import Mapbox
 
+let kClusterZoomLevel: Float = 11
+let kSourceName = "mcdonalds"
+let kIconName = "Pin"
+let kLayerName = "restaurants"
+let kLayerClusterName = "restaurants-cluster"
+let kLayerPointCountName = "restaurants-cluster-pointcount"
+
 class ClusteringViewController: UIViewController {
     
     @IBOutlet var mapView: MGLMapView!
     
-    let clusterLayers = [[1000.0, UIColor(colorLiteralRed: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1), 28.0],
-                         [300.0, UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1), 24.0],
-                         [100.0, UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1), 18.0],
-                         [0.0, UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1), 15.0]]
+    let layerNames = [kLayerClusterName, kLayerPointCountName, kLayerName]
 
-    let maximumClusterZoomLevel: Float = 12
-
-    func loadData() {
-        let geoJSONURL = Bundle.main.url(forResource: "mcdonalds", withExtension: "geojson")!
+    func setupMap() {
+        mapView.style?.setImage(#imageLiteral(resourceName: "Pin"), forName: kIconName)
         
         var options = [MGLShapeSourceOption : Any]()
         options[.clustered] = true
         options[.clusterRadius] = 100
-        options[.maximumZoomLevelForClustering] = maximumClusterZoomLevel
+        options[.maximumZoomLevelForClustering] = kClusterZoomLevel
 
-        let geoJSONSource = MGLShapeSource(identifier: "mcdonalds", url: geoJSONURL, options: options)
-        mapView.style?.addSource(geoJSONSource)
+        let sourceURL = Bundle.main.url(forResource: kSourceName, withExtension: "geojson")!
+        let source = MGLShapeSource(identifier: kSourceName, url: sourceURL, options: options)
+        mapView.style?.addSource(source)
         
-        for index in 0..<clusterLayers.count {
-            let gtePredicate = NSPredicate(format: "%K >= %@", argumentArray: ["point_count", clusterLayers[index][0] as! NSNumber])
-            let allPredicate = index == 0 ?
-                gtePredicate :
-                NSCompoundPredicate(andPredicateWithSubpredicates: [gtePredicate, NSPredicate(format: "%K < %@", argumentArray: ["point_count", clusterLayers[index - 1][0] as! NSNumber])])
-            
-            let circleBorder = MGLCircleStyleLayer(identifier: "cluster-\(index)-border", source: geoJSONSource)
-            circleBorder.circleColor = MGLStyleConstantValue(rawValue: UIColor.white)
-            let radius = clusterLayers[index][2] as! Double * 1.2
-            circleBorder.circleRadius = MGLStyleConstantValue(rawValue: radius as NSNumber)
-            circleBorder.predicate = allPredicate
-            mapView.style?.addLayer(circleBorder)
-            
-            let circle = MGLCircleStyleLayer(identifier: "cluster-\(index)", source: geoJSONSource)
-            circle.circleColor = MGLStyleConstantValue(rawValue: clusterLayers[index][1] as! UIColor)
-            let radius2 = clusterLayers[index][2] as! Double
-            circle.circleRadius = MGLStyleConstantValue(rawValue: radius2 as NSNumber)
-            circle.predicate = allPredicate
-            mapView.style?.addLayer(circle)
-        }
+        let circles = MGLCircleStyleLayer(identifier: kLayerClusterName, source: source)
+        circles.circleStrokeColor = MGLStyleValue(rawValue: UIColor.white)
+        circles.circleStrokeWidth = MGLStyleValue(rawValue: 1)
+        circles.circleColor = MGLStyleValue(
+            interpolationMode: .interval,
+            sourceStops: [
+                0: MGLStyleValue(rawValue: UIColor(colorLiteralRed: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1)),
+                100: MGLStyleValue(rawValue: UIColor(colorLiteralRed: 255/255.0, green: 204/255.0, blue: 0/255.0, alpha: 1)),
+                300: MGLStyleValue(rawValue: UIColor(colorLiteralRed: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1)),
+                1000: MGLStyleValue(rawValue: UIColor(colorLiteralRed: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1))],
+            attributeName: "point_count",
+            options: nil)
+        circles.circleRadius = MGLStyleValue(
+            interpolationMode: .interval,
+            sourceStops: [
+                0: MGLStyleValue(rawValue: 12),
+                100: MGLStyleValue(rawValue: 15),
+                300: MGLStyleValue(rawValue: 18),
+                1000: MGLStyleValue(rawValue: 20)],
+            attributeName: "point_count",
+            options: nil)
+        circles.predicate = NSPredicate(format: "%K == YES", argumentArray: ["cluster"])
+        mapView.style?.addLayer(circles)
         
-        let clusterPointCountLayer = MGLSymbolStyleLayer(identifier: "cpc-layer", source: geoJSONSource)
-        clusterPointCountLayer.text = MGLStyleConstantValue(rawValue: "{point_count}")
-        clusterPointCountLayer.textColor = MGLStyleConstantValue(rawValue: UIColor.white)
-        clusterPointCountLayer.maximumZoomLevel = maximumClusterZoomLevel
-        mapView.style?.addLayer(clusterPointCountLayer)
-
-        mapView.style?.setImage(UIImage(named: "Pin")!, forName: "pin-icon")
-        let pinLayer = MGLSymbolStyleLayer(identifier: "pin-layer", source: geoJSONSource)
-        pinLayer.iconImageName = MGLStyleValue(rawValue: "pin-icon")
-        pinLayer.minimumZoomLevel = maximumClusterZoomLevel
-        pinLayer.iconAllowsOverlap = MGLStyleValue(rawValue: NSNumber(booleanLiteral: true))
-        mapView.style?.addLayer(pinLayer)
+        var symbols = MGLSymbolStyleLayer(identifier: kLayerPointCountName, source: source)
+        symbols.text = MGLStyleValue(rawValue: "{point_count}")
+        symbols.textColor = MGLStyleValue(rawValue: UIColor.white)
+        mapView.style?.addLayer(symbols)
+        
+        symbols = MGLSymbolStyleLayer(identifier: kLayerName, source: source)
+        symbols.iconImageName = MGLStyleValue.init(rawValue: NSString(string: kIconName))
+        symbols.iconAllowsOverlap = MGLStyleValue(rawValue: NSNumber(value: true))
+        symbols.predicate = NSPredicate(format: "%K != YES", argumentArray: ["cluster"])
+        mapView.style?.addLayer(symbols)
     }
 }
 
 extension ClusteringViewController : MGLMapViewDelegate {
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        loadData()
+        setupMap()
     }
 }
