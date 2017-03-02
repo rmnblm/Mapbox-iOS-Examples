@@ -25,10 +25,6 @@ class PathSelectionViewController: UIViewController {
     }
     
     func handleTap(recognizer: UITapGestureRecognizer) {
-        if annotation != nil {
-            mapView.removeAnnotation(annotation!)
-        }
-        
         let location = recognizer.location(in: mapView)
         let touchableSquare = squareFrom(location: location)
         for feature in mapView.visibleFeatures(in: touchableSquare, styleLayerIdentifiers: ["portland-layer"]) {

@@ -13,7 +13,7 @@ import MapboxGeocoder
 class GeocoderViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
 
     let geocoder = Geocoder(accessToken: Bundle.main.valueFromPList(named: "Keys", key: "MAPBOX_ACCESS_TOKEN"))
-    let cellIdentifier = "cellIdentifier"
+    let cellIdentifier = "SearchResultCell"
 
     var searchController: UISearchController!
 

@@ -50,7 +50,7 @@ struct ExampleDataSource {
         ),
         Example(
             title: "Path Selection",
-            detail: "Styled polyline with direct user feedback (workaround for issue #2082)",
+            detail: "Styled polyline with direct user feedback",
             classPrefix: "PathSelection"
         ),
         Example(
@@ -62,6 +62,11 @@ struct ExampleDataSource {
             title: "Geocoder",
             detail: "Search for all type of map elements using the Mapbox Geocoding service.",
             classPrefix: "Geocoder"
+        ),
+        Example(
+            title: "Directions",
+            detail: "Example on how to use the Directions API.",
+            classPrefix: "Directions"
         )
     ]
 }

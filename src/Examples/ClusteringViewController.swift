@@ -22,10 +22,9 @@ class ClusteringViewController: UIViewController, MGLMapViewDelegate {
     
     let layerNames = [kLayerClusterName, kLayerPointCountName, kLayerName]
 
-    func setupMap() {
-        mapView.style?.setImage(#imageLiteral(resourceName: "Pin"), forName: kIconName)
-
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        mapView.style?.setImage(#imageLiteral(resourceName: "Pin"), forName: kIconName)
+        
         var options = [MGLShapeSourceOption : Any]()
         options[.clustered] = true
         options[.clusterRadius] = 100
