@@ -21,7 +21,6 @@
 		30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3E01D97BBEB00819457 /* LaunchScreen.storyboard */; };
 		30E1273D1DA3D1FE007CDC23 /* Offline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E1273B1DA3D1FE007CDC23 /* Offline.storyboard */; };
 		30E1273E1DA3D1FE007CDC23 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1273C1DA3D1FE007CDC23 /* OfflineViewController.swift */; };
-		30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */; };
 		30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */; };
 		30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */; };
 		30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */; };
@@ -34,8 +33,6 @@
 		30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */; };
 		30E48F8D1D97C2F400F6CCB7 /* PathSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */; };
 		30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */; };
-		30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */; };
-		30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */; };
 		30E48F941D97C4C400F6CCB7 /* mcdonalds.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */; };
 		30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E48F9C1D97CD7B00F6CCB7 /* Keys.plist */; };
 		30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */; };
@@ -69,7 +66,6 @@
 		30BAE3E31D97BBEB00819457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30E1273B1DA3D1FE007CDC23 /* Offline.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Offline.storyboard; path = Examples/Offline.storyboard; sourceTree = "<group>"; };
 		30E1273C1DA3D1FE007CDC23 /* OfflineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineViewController.swift; path = Examples/OfflineViewController.swift; sourceTree = "<group>"; };
-		30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemanticZoomingDataSource.swift; path = Examples/SemanticZoomingDataSource.swift; sourceTree = "<group>"; };
 		30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackCalloutView.swift; path = Examples/MarkerSelectFeedbackCalloutView.swift; sourceTree = "<group>"; };
 		30E22EB91D9B94BE00F67256 /* FilteringViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteringViewCell.swift; path = Examples/FilteringViewCell.swift; sourceTree = "<group>"; };
 		30E48F6D1D97C09400F6CCB7 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
@@ -82,8 +78,6 @@
 		30E48F831D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackViewController.swift; path = Examples/MarkerSelectFeedbackViewController.swift; sourceTree = "<group>"; };
 		30E48F8B1D97C2F400F6CCB7 /* PathSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PathSelection.storyboard; path = Examples/PathSelection.storyboard; sourceTree = "<group>"; };
 		30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PathSelectionViewController.swift; path = Examples/PathSelectionViewController.swift; sourceTree = "<group>"; };
-		30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SemanticZooming.storyboard; path = Examples/SemanticZooming.storyboard; sourceTree = "<group>"; };
-		30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemanticZoomingViewController.swift; path = Examples/SemanticZoomingViewController.swift; sourceTree = "<group>"; };
 		30E48F931D97C4C400F6CCB7 /* mcdonalds.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcdonalds.geojson; path = Resources/mcdonalds.geojson; sourceTree = "<group>"; };
 		30E48F9C1D97CD7B00F6CCB7 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		30E48FA21D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackAnnotationView.swift; path = Examples/MarkerSelectFeedbackAnnotationView.swift; sourceTree = "<group>"; };
@@ -177,7 +171,6 @@
 				30E48F741D97C27C00F6CCB7 /* Filtering */,
 				30E48F751D97C28900F6CCB7 /* MarkerSelectFeedback */,
 				30E48F771D97C29600F6CCB7 /* PathSelection */,
-				30E48F781D97C29C00F6CCB7 /* SemanticZooming */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -231,16 +224,6 @@
 				30E48F8C1D97C2F400F6CCB7 /* PathSelectionViewController.swift */,
 			);
 			name = PathSelection;
-			sourceTree = "<group>";
-		};
-		30E48F781D97C29C00F6CCB7 /* SemanticZooming */ = {
-			isa = PBXGroup;
-			children = (
-				30E48F8F1D97C2F900F6CCB7 /* SemanticZooming.storyboard */,
-				30E48F901D97C2F900F6CCB7 /* SemanticZoomingViewController.swift */,
-				30E22EAB1D9A6C4800F67256 /* SemanticZoomingDataSource.swift */,
-			);
-			name = SemanticZooming;
 			sourceTree = "<group>";
 		};
 		30E48FA41D97E71200F6CCB7 /* AsyncPinDropping */ = {
@@ -353,7 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E48F911D97C2F900F6CCB7 /* SemanticZooming.storyboard in Resources */,
 				30E48FA71D97E79100F6CCB7 /* AsyncPinDropping.storyboard in Resources */,
 				30E48F9D1D97CD7B00F6CCB7 /* Keys.plist in Resources */,
 				30E48FBB1D983F0D00F6CCB7 /* siliconvalley.geojson in Resources */,
@@ -475,7 +457,6 @@
 			files = (
 				30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */,
 				30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */,
-				30E22EAC1D9A6C4800F67256 /* SemanticZoomingDataSource.swift in Sources */,
 				301E27431DE1DC9800AB4401 /* BundleExtensions.swift in Sources */,
 				30E1273E1DA3D1FE007CDC23 /* OfflineViewController.swift in Sources */,
 				301E273F1DE1CEC500AB4401 /* GeocoderViewController.swift in Sources */,
@@ -489,7 +470,6 @@
 				307738F71DACE59300CAF2A7 /* OfflineDownloadProgressView.swift in Sources */,
 				30E48FA81D97E79100F6CCB7 /* AsyncPinDroppingViewController.swift in Sources */,
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
-				30E48F921D97C2F900F6CCB7 /* SemanticZoomingViewController.swift in Sources */,
 				3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */,
 				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
 				308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */,

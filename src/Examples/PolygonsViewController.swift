@@ -14,10 +14,6 @@ class PolygonsViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet var mapView: MGLMapView!
     
     public func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        loadData()
-    }
-    
-    private func loadData() {
         let geoJSONURL = Bundle.main.url(forResource: "amsterdam", withExtension: "geojson")!
         let geoJSONSource = MGLShapeSource(identifier: "ams", url: geoJSONURL)
         mapView.style?.addSource(geoJSONSource)
@@ -27,5 +23,4 @@ class PolygonsViewController: UIViewController, MGLMapViewDelegate {
         styleLayer.fillOutlineColor = MGLStyleConstantValue(rawValue: UIColor.purple)
         mapView.style?.addLayer(styleLayer)
     }
-    
 }

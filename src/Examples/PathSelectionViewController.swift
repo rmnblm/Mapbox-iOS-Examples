@@ -32,10 +32,6 @@ class PathSelectionViewController: UIViewController {
         let location = recognizer.location(in: mapView)
         let touchableSquare = squareFrom(location: location)
         for feature in mapView.visibleFeatures(in: touchableSquare, styleLayerIdentifiers: ["portland-layer"]) {
-            
-            print(feature)
-            print(feature.attributes)
-            
             if feature is MGLPolylineFeature {
                 highlightedLine.predicate = NSPredicate(format: "name == 'Crema to Council Crest'")
                 return

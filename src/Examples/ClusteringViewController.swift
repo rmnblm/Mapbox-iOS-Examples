@@ -16,15 +16,16 @@ let kLayerName = "restaurants"
 let kLayerClusterName = "restaurants-cluster"
 let kLayerPointCountName = "restaurants-cluster-pointcount"
 
-class ClusteringViewController: UIViewController {
-    
+class ClusteringViewController: UIViewController, MGLMapViewDelegate {
+
     @IBOutlet var mapView: MGLMapView!
     
     let layerNames = [kLayerClusterName, kLayerPointCountName, kLayerName]
 
     func setupMap() {
         mapView.style?.setImage(#imageLiteral(resourceName: "Pin"), forName: kIconName)
-        
+
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         var options = [MGLShapeSourceOption : Any]()
         options[.clustered] = true
         options[.clusterRadius] = 100
@@ -68,12 +69,5 @@ class ClusteringViewController: UIViewController {
         symbols.iconAllowsOverlap = MGLStyleValue(rawValue: NSNumber(value: true))
         symbols.predicate = NSPredicate(format: "%K != YES", argumentArray: ["cluster"])
         mapView.style?.addLayer(symbols)
-    }
-}
-
-extension ClusteringViewController : MGLMapViewDelegate {
-    
-    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        setupMap()
     }
 }
