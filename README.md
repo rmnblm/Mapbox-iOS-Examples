@@ -1,6 +1,8 @@
 # mapbox-ios-examples
 Mapbox examples using [Swift 3](https://swift.org/) and [Mapbox iOS SDK](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/ios).
 
+> This repo serves as a base for experiments during my two semesters working on my study and Bachelor thesis with @iphilgood.
+
 # Prerequisites
 
 In order to run the app you need CocoaPods. At the time of writing, CocoaPods 1.1 is still not released but it is required for a bunch of pods.
