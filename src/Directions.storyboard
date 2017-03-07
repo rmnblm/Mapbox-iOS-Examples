@@ -24,6 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebt-Mx-O6B" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.12853154019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="latitude">
                                         <real key="value" value="47.223272000000001"/>
@@ -52,6 +53,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.12853154019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cvm-gD-szS" firstAttribute="centerX" secondItem="hqg-5p-oJE" secondAttribute="centerX" id="1eH-xb-Kmc"/>
                                     <constraint firstItem="cvm-gD-szS" firstAttribute="centerY" secondItem="hqg-5p-oJE" secondAttribute="centerY" id="BKD-zv-lMA"/>
