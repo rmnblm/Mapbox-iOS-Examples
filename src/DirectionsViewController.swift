@@ -125,7 +125,9 @@ extension DirectionsViewController: RouteAnnotationViewDelegate {
     func dragStarted(_ annotationView: RouteAnnotationView) {
         magnifyingMapView.isHidden = false
         
-        if mapView.zoomLevel < kMinimumMagnificationZoomLevel {
+        if mapView.zoomLevel > kMinimumMagnificationZoomLevel {
+            magnifyingMapView.zoomLevel = mapView.zoomLevel
+        } else {
             magnifyingMapView.zoomLevel = kMinimumMagnificationZoomLevel
         }
     }
