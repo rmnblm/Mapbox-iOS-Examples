@@ -65,7 +65,7 @@ struct ExampleDataSource {
         ),
         Example(
             title: "Directions",
-            detail: "Example on how to use the Directions API.",
+            detail: "Example on how to use the Directions API with the possibility to drag waypoints.",
             classPrefix: "Directions"
         )
     ]

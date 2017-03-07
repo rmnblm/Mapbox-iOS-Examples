@@ -10,11 +10,16 @@ import UIKit
 import Mapbox
 import MapboxDirections
 
-class DirectionsViewController: UIViewController, MGLMapViewDelegate {
+let kMinimumMagnificationZoomLevel: Double = 15.0
 
+class DirectionsViewController: UIViewController {
+
+    @IBOutlet weak var magnifyingMapView: MGLMapView!
     @IBOutlet var mapView: MGLMapView!
 
-    var waypoints = [Waypoint]()
+    var points = [MGLPointAnnotation]()
+    var routeLines = [MGLPolyline]()
+
     var task: URLSessionTask?
     
     let directions = Directions(accessToken: Bundle.main.valueFromPList(named: "Keys", key: "MAPBOX_ACCESS_TOKEN"))
@@ -24,16 +29,19 @@ class DirectionsViewController: UIViewController, MGLMapViewDelegate {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearMap))
 
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handlePress))
-        mapView.addGestureRecognizer(gestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handlePress))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+
+        magnifyingMapView.attributionButton.isHidden = true
+        magnifyingMapView.logoView.isHidden = true
     }
 
     func clearMap() {
-        if let annotations = mapView.annotations {
-            mapView.removeAnnotations(annotations)
-        }
+        mapView.removeAnnotations(points)
+        mapView.removeAnnotations(routeLines)
 
-        waypoints.removeAll()
+        points.removeAll()
+        routeLines.removeAll()
     }
 
     func handlePress(_ recognizer: UITapGestureRecognizer) {
@@ -44,14 +52,17 @@ class DirectionsViewController: UIViewController, MGLMapViewDelegate {
         annotation.coordinate = coordinate
         mapView.addAnnotation(annotation)
 
-        waypoints.append(Waypoint(coordinate: coordinate))
+        points.append(annotation)
 
         updateRoute()
     }
 
     func updateRoute() {
-        if waypoints.count <= 1 { return }
-        
+        if points.count <= 1 { return }
+
+        mapView.removeAnnotations(routeLines)
+
+        let waypoints = points.map({ Waypoint(coordinate: $0.coordinate) })
         let options = RouteOptions(waypoints: waypoints, profileIdentifier: MBDirectionsProfileIdentifier.cycling)
         options.includesSteps = true
 
@@ -86,9 +97,46 @@ class DirectionsViewController: UIViewController, MGLMapViewDelegate {
                     let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
 
                     self.mapView.addAnnotation(routeLine)
-                    self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
+                    self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50), animated: true)
+                    self.routeLines.append(routeLine)
                 }
             }
         }
+    }
+}
+
+extension DirectionsViewController: MGLMapViewDelegate {
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        guard annotation is MGLPointAnnotation else {
+            return nil
+        }
+
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "routePoint") {
+            return annotationView
+        } else {
+            let view = RouteAnnotationView(reuseIdentifier: "routePoint", size: 20)
+            view.delegate = self
+            return view
+        }
+    }
+}
+
+extension DirectionsViewController: RouteAnnotationViewDelegate {
+    func dragStarted(_ annotationView: RouteAnnotationView) {
+        magnifyingMapView.isHidden = false
+        
+        if mapView.zoomLevel < kMinimumMagnificationZoomLevel {
+            magnifyingMapView.zoomLevel = kMinimumMagnificationZoomLevel
+        }
+    }
+
+    func didDrag(_ annotationView: RouteAnnotationView) {
+        let centerCoordinate = mapView.convert(annotationView.center, toCoordinateFrom: nil)
+        magnifyingMapView.centerCoordinate = centerCoordinate
+    }
+
+    func dragEnded(_ annotationView: RouteAnnotationView) {
+        magnifyingMapView.isHidden = true
+        updateRoute()
     }
 }

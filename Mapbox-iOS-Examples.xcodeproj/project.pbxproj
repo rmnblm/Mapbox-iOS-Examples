@@ -21,6 +21,8 @@
 		30BAE3DD1D97BBEB00819457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DB1D97BBEB00819457 /* Main.storyboard */; };
 		30BAE3DF1D97BBEB00819457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3DE1D97BBEB00819457 /* Assets.xcassets */; };
 		30BAE3E21D97BBEB00819457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BAE3E01D97BBEB00819457 /* LaunchScreen.storyboard */; };
+		30C14C5B1E6DBF9B0059602D /* RouteAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C14C5A1E6DBF9B0059602D /* RouteAnnotationView.swift */; };
+		30C14C5D1E6DC2DA0059602D /* RouteAnnotationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C14C5C1E6DC2DA0059602D /* RouteAnnotationViewDelegate.swift */; };
 		30E1273D1DA3D1FE007CDC23 /* Offline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E1273B1DA3D1FE007CDC23 /* Offline.storyboard */; };
 		30E1273E1DA3D1FE007CDC23 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E1273C1DA3D1FE007CDC23 /* OfflineViewController.swift */; };
 		30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */; };
@@ -43,7 +45,7 @@
 		30E48FAF1D9810B300F6CCB7 /* amsterdam.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */; };
 		30E48FB31D98123900F6CCB7 /* Polygons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FB11D98123900F6CCB7 /* Polygons.storyboard */; };
 		30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */; };
-		30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */; };
+		30E48FB91D98267C00F6CCB7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E48FB81D98267C00F6CCB7 /* UIViewControllerExtensions.swift */; };
 		30E48FBB1D983F0D00F6CCB7 /* siliconvalley.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 30E48FBA1D983F0D00F6CCB7 /* siliconvalley.geojson */; };
 		5021B45661A977F51CF174FF /* Pods_Mapbox_iOS_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279224B801E9358AFE43D13 /* Pods_Mapbox_iOS_Examples.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		30BAE3DE1D97BBEB00819457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30BAE3E11D97BBEB00819457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30BAE3E31D97BBEB00819457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C14C5A1E6DBF9B0059602D /* RouteAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteAnnotationView.swift; sourceTree = "<group>"; };
+		30C14C5C1E6DC2DA0059602D /* RouteAnnotationViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteAnnotationViewDelegate.swift; sourceTree = "<group>"; };
 		30E1273B1DA3D1FE007CDC23 /* Offline.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Offline.storyboard; path = Examples/Offline.storyboard; sourceTree = "<group>"; };
 		30E1273C1DA3D1FE007CDC23 /* OfflineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfflineViewController.swift; path = Examples/OfflineViewController.swift; sourceTree = "<group>"; };
 		30E22EB71D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerSelectFeedbackCalloutView.swift; path = Examples/MarkerSelectFeedbackCalloutView.swift; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 		30E48FAE1D9810B300F6CCB7 /* amsterdam.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = amsterdam.geojson; path = Resources/amsterdam.geojson; sourceTree = "<group>"; };
 		30E48FB11D98123900F6CCB7 /* Polygons.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Polygons.storyboard; path = Examples/Polygons.storyboard; sourceTree = "<group>"; };
 		30E48FB21D98123900F6CCB7 /* PolygonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PolygonsViewController.swift; path = Examples/PolygonsViewController.swift; sourceTree = "<group>"; };
-		30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+alert.swift"; path = "Extensions/UIViewController+alert.swift"; sourceTree = "<group>"; };
+		30E48FB81D98267C00F6CCB7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtensions.swift; path = Extensions/UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		30E48FBA1D983F0D00F6CCB7 /* siliconvalley.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = siliconvalley.geojson; path = Resources/siliconvalley.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,8 @@
 			children = (
 				307815181E686DE400E89991 /* Directions.storyboard */,
 				3078151A1E686DEF00E89991 /* DirectionsViewController.swift */,
+				30C14C5A1E6DBF9B0059602D /* RouteAnnotationView.swift */,
+				30C14C5C1E6DC2DA0059602D /* RouteAnnotationViewDelegate.swift */,
 			);
 			name = Directions;
 			sourceTree = "<group>";
@@ -261,7 +267,7 @@
 		30E48FB71D98266C00F6CCB7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				30E48FB81D98267C00F6CCB7 /* UIViewController+alert.swift */,
+				30E48FB81D98267C00F6CCB7 /* UIViewControllerExtensions.swift */,
 				301E27421DE1DC9800AB4401 /* BundleExtensions.swift */,
 			);
 			name = Extensions;
@@ -472,13 +478,14 @@
 			files = (
 				30E48FA31D97D1A500F6CCB7 /* MarkerSelectFeedbackAnnotationView.swift in Sources */,
 				3078151B1E686DEF00E89991 /* DirectionsViewController.swift in Sources */,
+				30C14C5B1E6DBF9B0059602D /* RouteAnnotationView.swift in Sources */,
 				30E48F8E1D97C2F400F6CCB7 /* PathSelectionViewController.swift in Sources */,
 				301E27431DE1DC9800AB4401 /* BundleExtensions.swift in Sources */,
 				30E1273E1DA3D1FE007CDC23 /* OfflineViewController.swift in Sources */,
 				301E273F1DE1CEC500AB4401 /* GeocoderViewController.swift in Sources */,
 				30E48F7C1D97C2DA00F6CCB7 /* ClusteringViewController.swift in Sources */,
 				30E22EBA1D9B94BE00F67256 /* FilteringViewCell.swift in Sources */,
-				30E48FB91D98267C00F6CCB7 /* UIViewController+alert.swift in Sources */,
+				30E48FB91D98267C00F6CCB7 /* UIViewControllerExtensions.swift in Sources */,
 				30E48F861D97C2E700F6CCB7 /* MarkerSelectFeedbackViewController.swift in Sources */,
 				30E22EB81D9B94A700F67256 /* MarkerSelectFeedbackCalloutView.swift in Sources */,
 				30E48F6F1D97C09400F6CCB7 /* RootViewCell.swift in Sources */,
@@ -488,6 +495,7 @@
 				30E48F721D97C0B400F6CCB7 /* ExampleDataSource.swift in Sources */,
 				3022916F1D99A5EB0036D338 /* FilteringDataSource.swift in Sources */,
 				30E48FB41D98123900F6CCB7 /* PolygonsViewController.swift in Sources */,
+				30C14C5D1E6DC2DA0059602D /* RouteAnnotationViewDelegate.swift in Sources */,
 				308FEC371D98630B00499BED /* FilteringViewController.swift in Sources */,
 				30BAE3D81D97BBEB00819457 /* AppDelegate.swift in Sources */,
 				30E48F701D97C09400F6CCB7 /* RootViewController.swift in Sources */,
