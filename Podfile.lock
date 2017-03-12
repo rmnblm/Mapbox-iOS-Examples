@@ -1,5 +1,5 @@
 PODS:
-  - Mapbox-iOS-SDK (3.5.0-beta.1)
+  - Mapbox-iOS-SDK (3.5.0-beta.3)
   - MapboxDirections.swift (0.8.0):
     - Polyline (~> 4.0)
   - MapboxGeocoder.swift (0.6.0)
@@ -7,22 +7,22 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Mapbox-iOS-SDK (from `https://raw.githubusercontent.com/mapbox/mapbox-gl-native/ios-v3.5.0-beta.1/platform/ios/Mapbox-iOS-SDK.podspec`)
+  - Mapbox-iOS-SDK (from `https://raw.githubusercontent.com/mapbox/mapbox-gl-native/ios-v3.5.0-beta.3/platform/ios/Mapbox-iOS-SDK.podspec`)
   - MapboxDirections.swift (~> 0.8)
   - MapboxGeocoder.swift (~> 0.6)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
   Mapbox-iOS-SDK:
-    :podspec: https://raw.githubusercontent.com/mapbox/mapbox-gl-native/ios-v3.5.0-beta.1/platform/ios/Mapbox-iOS-SDK.podspec
+    :podspec: https://raw.githubusercontent.com/mapbox/mapbox-gl-native/ios-v3.5.0-beta.3/platform/ios/Mapbox-iOS-SDK.podspec
 
 SPEC CHECKSUMS:
-  Mapbox-iOS-SDK: 97b737869849e1f30fc19bafe6325b7b1264e0d9
+  Mapbox-iOS-SDK: 3c6b1fbaae9433b166b6a1add2f1d03b601d6a61
   MapboxDirections.swift: 242f12da1a6530f436d5fe5b4d9fc38cf2f9b1d0
   MapboxGeocoder.swift: dd6783c5262b4ebb1cf5f2662b56cea94a90f67d
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: afbb1e033946b93754419ea463f17ea29a6404f4
+PODFILE CHECKSUM: 6e3a800a3d6a2f8658f12dae19257a4e4546e7a2
 
 COCOAPODS: 1.2.0
