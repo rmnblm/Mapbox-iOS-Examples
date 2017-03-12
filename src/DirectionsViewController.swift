@@ -14,6 +14,7 @@ let kMinimumMagnificationZoomLevel: Double = 15.0
 
 class DirectionsViewController: UIViewController {
 
+    @IBOutlet weak var magMapViewContainer: UIView!
     @IBOutlet weak var magnifyingMapView: MGLMapView!
     @IBOutlet var mapView: MGLMapView!
 
@@ -34,6 +35,10 @@ class DirectionsViewController: UIViewController {
 
         magnifyingMapView.attributionButton.isHidden = true
         magnifyingMapView.logoView.isHidden = true
+
+        magMapViewContainer.layer.shadowColor = UIColor.black.cgColor
+        magMapViewContainer.layer.shadowOpacity = 0.5
+        magMapViewContainer.layer.shadowRadius = 12.0
     }
 
     func clearMap() {
@@ -123,8 +128,8 @@ extension DirectionsViewController: MGLMapViewDelegate {
 
 extension DirectionsViewController: RouteAnnotationViewDelegate {
     func dragStarted(_ annotationView: RouteAnnotationView) {
-        magnifyingMapView.isHidden = false
-        
+        magMapViewContainer.isHidden = false
+
         if mapView.zoomLevel > kMinimumMagnificationZoomLevel {
             magnifyingMapView.zoomLevel = mapView.zoomLevel
         } else {
@@ -138,7 +143,7 @@ extension DirectionsViewController: RouteAnnotationViewDelegate {
     }
 
     func dragEnded(_ annotationView: RouteAnnotationView) {
-        magnifyingMapView.isHidden = true
+        magMapViewContainer.isHidden = true
         updateRoute()
     }
 }

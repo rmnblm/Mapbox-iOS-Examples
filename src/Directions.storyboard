@@ -40,49 +40,64 @@
                                     <outlet property="delegate" destination="JMu-db-qAv" id="SY0-8m-gXS"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-5p-oJE" customClass="MGLMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="120"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWT-1Q-1eD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="121"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvm-gD-szS" customClass="RouteAnnotationView" customModule="Mapbox_iOS_Examples" customModuleProvider="target">
-                                        <rect key="frame" x="177.5" y="50" width="20" height="20"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqg-5p-oJE" customClass="MGLMapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvm-gD-szS" customClass="RouteAnnotationView" customModule="Mapbox_iOS_Examples" customModuleProvider="target">
+                                                <rect key="frame" x="177.5" y="50" width="20" height="20"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Ynm-Ma-v3I"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="iKc-vO-gxv"/>
+                                                    <constraint firstAttribute="height" constant="20" id="mwf-Sj-74d"/>
+                                                    <constraint firstAttribute="width" constant="20" id="yvn-OD-Bcg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.12853154019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="mwf-Sj-74d"/>
-                                            <constraint firstAttribute="width" constant="20" id="yvn-OD-Bcg"/>
+                                            <constraint firstAttribute="height" constant="120" id="5hZ-vJ-Blk"/>
+                                            <constraint firstItem="cvm-gD-szS" firstAttribute="centerX" secondItem="hqg-5p-oJE" secondAttribute="centerX" id="LUk-j2-AUR"/>
+                                            <constraint firstItem="cvm-gD-szS" firstAttribute="centerY" secondItem="hqg-5p-oJE" secondAttribute="centerY" id="zce-RA-edL"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsZooming" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsTilting" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="JMu-db-qAv" id="mbD-bU-Onl"/>
+                                        </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="1" green="0.12853154019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="cvm-gD-szS" firstAttribute="centerX" secondItem="hqg-5p-oJE" secondAttribute="centerX" id="1eH-xb-Kmc"/>
-                                    <constraint firstItem="cvm-gD-szS" firstAttribute="centerY" secondItem="hqg-5p-oJE" secondAttribute="centerY" id="BKD-zv-lMA"/>
-                                    <constraint firstAttribute="height" constant="120" id="rUC-1e-0ew"/>
+                                    <constraint firstItem="hqg-5p-oJE" firstAttribute="leading" secondItem="OWT-1Q-1eD" secondAttribute="leading" id="a08-LE-t1V"/>
+                                    <constraint firstAttribute="trailing" secondItem="hqg-5p-oJE" secondAttribute="trailing" id="eyK-Y1-4M2"/>
+                                    <constraint firstAttribute="height" constant="121" id="hce-zd-Uvo"/>
+                                    <constraint firstItem="hqg-5p-oJE" firstAttribute="top" secondItem="OWT-1Q-1eD" secondAttribute="top" id="kIv-l6-u5m"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsZooming" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsTilting" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="JMu-db-qAv" id="mbD-bU-Onl"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ebt-Mx-O6B" firstAttribute="leading" secondItem="k9r-Qc-E0q" secondAttribute="leading" id="5vr-hV-azn"/>
-                            <constraint firstAttribute="trailing" secondItem="hqg-5p-oJE" secondAttribute="trailing" id="TeF-eW-rgU"/>
+                            <constraint firstItem="OWT-1Q-1eD" firstAttribute="leading" secondItem="k9r-Qc-E0q" secondAttribute="leading" id="8z3-oh-yvM"/>
+                            <constraint firstItem="OWT-1Q-1eD" firstAttribute="top" secondItem="aZ8-fV-0xe" secondAttribute="bottom" id="PFa-wn-KqV"/>
                             <constraint firstAttribute="trailing" secondItem="Ebt-Mx-O6B" secondAttribute="trailing" id="eRN-Em-KIT"/>
+                            <constraint firstAttribute="trailing" secondItem="OWT-1Q-1eD" secondAttribute="trailing" id="lfT-rF-eqB"/>
                             <constraint firstItem="KOT-4I-To1" firstAttribute="top" secondItem="Ebt-Mx-O6B" secondAttribute="bottom" id="svM-ec-TVP"/>
                             <constraint firstItem="Ebt-Mx-O6B" firstAttribute="top" secondItem="k9r-Qc-E0q" secondAttribute="top" id="swF-pK-Bw9"/>
-                            <constraint firstItem="hqg-5p-oJE" firstAttribute="leading" secondItem="k9r-Qc-E0q" secondAttribute="leading" id="ueF-rD-dDx"/>
-                            <constraint firstItem="hqg-5p-oJE" firstAttribute="top" secondItem="aZ8-fV-0xe" secondAttribute="bottom" id="vyk-Ac-2Zq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="magMapViewContainer" destination="OWT-1Q-1eD" id="bF0-VQ-dln"/>
                         <outlet property="magnifyingMapView" destination="hqg-5p-oJE" id="W0v-3N-wgC"/>
                         <outlet property="mapView" destination="Ebt-Mx-O6B" id="HKr-He-fQt"/>
                     </connections>
