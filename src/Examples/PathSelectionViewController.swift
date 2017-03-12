@@ -56,12 +56,14 @@ class PathSelectionViewController: UIViewController {
         let styleLayer = MGLLineStyleLayer(identifier: "portland-layer", source: geoJSONSource)
         styleLayer.lineWidth = MGLStyleConstantValue(rawValue: 5)
         styleLayer.lineColor = MGLStyleConstantValue(rawValue: UIColor.gray)
+        styleLayer.minimumZoomLevel = 11.5
         mapView.style?.addLayer(styleLayer)
         
         highlightedLine = MGLLineStyleLayer(identifier: "trackhl-layer", source: geoJSONSource)
         highlightedLine.lineWidth = MGLStyleConstantValue(rawValue: 5)
         highlightedLine.lineColor = MGLStyleConstantValue(rawValue: UIColor(colorLiteralRed: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1) )
         highlightedLine.predicate = NSPredicate(value: false)
+        highlightedLine.minimumZoomLevel = styleLayer.minimumZoomLevel
         mapView.style?.addLayer(highlightedLine)
     }
 }
