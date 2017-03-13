@@ -12,6 +12,8 @@ class RouteAnnotationView: MGLAnnotationView {
 
     weak var delegate: RouteAnnotationViewDelegate?
 
+    var identifier: String?
+
     private func commonInit(_ size: CGFloat) {
         isDraggable = true
         scalesWithViewingDistance = false
@@ -40,6 +42,11 @@ class RouteAnnotationView: MGLAnnotationView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit(frame.width)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        identifier = nil
     }
 
     override func setDragState(_ dragState: MGLAnnotationViewDragState, animated: Bool) {
