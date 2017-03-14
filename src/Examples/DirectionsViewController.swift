@@ -64,6 +64,10 @@ class DirectionsViewController: UIViewController {
             // do nothing
         } else if let feature = mapView.visibleFeatures(in: touchRect, styleLayerIdentifiers: ["route-lines"]).first {
             let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+            if let popoverController = optionMenu.popoverPresentationController {
+                popoverController.sourceRect = CGRect(origin: touchPoint, size: .zero)
+                popoverController.sourceView = mapView
+            }
 
             let addAction = UIAlertAction(title: "Add Point to Route", style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
@@ -193,6 +197,12 @@ extension DirectionsViewController: MGLMapViewDelegate {
         }
 
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        if let popoverController = optionMenu.popoverPresentationController {
+            let touchPoint = mapView.convert(annotation.coordinate, toPointTo: nil)
+            popoverController.sourceRect = CGRect(origin: touchPoint, size: .zero)
+            popoverController.sourceView = mapView
+        }
+
         let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             guard let id = routeAnnotationView.identifier,
